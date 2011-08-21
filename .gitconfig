@@ -1,0 +1,9 @@
+[user]
+	name = keithpitt
+	email = me@keithpitt.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[alias]
+	signoff = !git-signoff
