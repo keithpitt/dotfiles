@@ -1,0 +1,5 @@
+set guioptions-=L
+set guioptions-=r
+
+color jellybeans
+set guifont=Monaco:h12
