@@ -1,4 +1,4 @@
-files = %w(gvimrc.local rspec rvmrc zshrc)
+files = %w(gvimrc.local gitconfig rspec rvmrc zshrc)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
