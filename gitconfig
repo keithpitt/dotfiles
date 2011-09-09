@@ -7,3 +7,6 @@
   status = auto
 [alias]
 	signoff = !git-signoff
+[github]
+	user = keithpitt
+	token = 5cf4deb47a0414e8876e547ec4f2f9c5
