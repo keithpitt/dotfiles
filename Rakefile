@@ -1,4 +1,5 @@
 files = %w(gvimrc.local gitconfig rspec rvmrc zshrc)
+bin = %w(cloudapp)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -23,6 +24,9 @@ task :clean do
   files.each do |file|
     run "rm ~/.#{file}"
   end
+  bin.each do |file|
+    run "rm /usr/local/bin/#{file}"
+  end
 end
 
 task :setup do
@@ -44,4 +48,11 @@ task :github do
   run "git config --global github.token #{token}"
 end
 
-task :default => [ :setup, :github ]
+task :bin do
+  bin.each do |file|
+    path = File.join(File.dirname(__FILE__), "bin", file)
+    run "ln -s #{path} /usr/local/bin/#{file}"
+  end
+end
+
+task :default => [ :setup, :github, :bin ]
