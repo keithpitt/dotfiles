@@ -48,6 +48,16 @@ task :github do
   run "git config --global github.token #{token}"
 end
 
+task :cloudapp do
+  puts "What is your CloudApp email? "
+  email = STDIN.gets.chomp.strip
+  puts "What is your CloudApp password? "
+  password = STDIN.gets.chomp.strip
+
+  puts "Setting up CloudApp account..."
+  run %{echo "#{email}\\n#{password}" > ~/.cloudapp}
+end
+
 task :bin do
   bin.each do |file|
     path = File.join(File.dirname(__FILE__), "bin", file)
@@ -55,4 +65,4 @@ task :bin do
   end
 end
 
-task :default => [ :setup, :github, :bin ]
+task :default => [ :setup, :bin, :github, :cloudapp ]
