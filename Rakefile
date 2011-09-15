@@ -33,7 +33,7 @@ task :setup do
   puts "Copying config files..."
   files.each do |file|
     path = File.join(File.dirname(__FILE__), file)
-    run "ln -s #{path} ~/.#{file}"
+    run "cp #{path} ~/.#{file}"
   end
 end
 
@@ -61,7 +61,7 @@ end
 task :bin do
   bin.each do |file|
     path = File.join(File.dirname(__FILE__), "bin", file)
-    run "ln -s #{path} /usr/local/bin/#{file}"
+    run "cp #{path} /usr/local/bin/#{file}"
   end
 end
 

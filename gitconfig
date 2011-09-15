@@ -7,6 +7,25 @@
   status = auto
 [alias]
 	signoff = !git-signoff
-[github]
-	user = keithpitt
-	token = 5cf4deb47a0414e8876e547ec4f2f9c5
+  # via http://andyjeffries.co.uk/articles/25-tips-for-intermediate-git-users
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  unstage = reset HEAD
+  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
+[push]
+  # Push current branch even if you've never pushed it before
+  default = current
+[color "diff"]
+  # Color syntax: <foreground> <background>
+  # So "normal red" is normal foreground, red background
+  # BUT bold is a modifier, so "bold green red" means
+  #   "bold green" foreground, red background
+  whitespace = red reverse
+  plain = white
+  meta = cyan
+  frag = magenta bold
+  old = red
+  new = green
+  commit = yellow
+[diff]
+  # For Github-style word diffs
+  wordRegex = [^[:space:]]
