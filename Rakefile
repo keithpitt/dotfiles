@@ -65,4 +65,4 @@ task :bin do
   end
 end
 
-task :default => [ :setup, :bin, :github, :cloudapp ]
+task :default => [ :clean, :setup, :bin, :github, :cloudapp ]
