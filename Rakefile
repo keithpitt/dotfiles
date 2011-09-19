@@ -70,6 +70,7 @@ task :bin do
 end
 
 task :gems do
+  puts "Installing gems I like..."
   gems.each do |gem|
     run "gem install #{gem}"
   end
