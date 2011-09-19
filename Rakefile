@@ -1,5 +1,9 @@
+# TODO
+# Automatically install RVM
+
 files = %w(gvimrc.local gitconfig rspec rvmrc zshrc)
 bin = %w(cloudapp)
+gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -65,4 +69,10 @@ task :bin do
   end
 end
 
-task :default => [ :clean, :setup, :bin, :github, :cloudapp ]
+task :gems do
+  gems.each do |gem|
+    run "gem install #{gem}"
+  end
+end
+
+task :default => [ :clean, :setup, :bin, :github, :cloudapp, :gems ]
