@@ -10,7 +10,7 @@
   # via http://andyjeffries.co.uk/articles/25-tips-for-intermediate-git-users
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
   unstage = reset HEAD
-  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
+  done = !git fetch && git rebase origin/develop && git checkout develop && git merge @{-1} && rake && git push
 [push]
   # Push current branch even if you've never pushed it before
   default = current
