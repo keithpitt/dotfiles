@@ -2,7 +2,6 @@
 require 'rubygems'
 require 'coderay'
 require 'json'
-require 'nokogiri'
 
 filetype = (ARGV[0] || "text").strip
 text = STDIN.read
