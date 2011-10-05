@@ -3,7 +3,7 @@
 
 files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc)
 bin = %w(cloudapp pretty)
-gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist)
+gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
