@@ -1,8 +1,8 @@
 # TODO
 # Automatically install RVM
 
-files = %w(gvimrc.local gitconfig rspec rvmrc zshrc)
-bin = %w(cloudapp)
+files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc)
+bin = %w(cloudapp pretty)
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist)
 
 def colorize(text, color_code)

@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'coderay'
+require 'json'
+require 'nokogiri'
+
+filetype = (ARGV[0] || "text").strip
+text = STDIN.read
+
+# Does the input look like JSON?
+if filetype == "json" || filetype == "text"
+  begin
+    text = JSON.pretty_generate(JSON.parse(text))
+    filetype = "json"
+  rescue
+    # Woops, not JSON
+  end
+end
+
+# Does it look like HTML?
+if filetype == "html" || filetype == "text"
+  formatted = `echo #{text.inspect} | tidy -q -i -omit -xml`
+
+  if $?.to_i == 0
+    filetype = "html"
+    text = formatted
+  end
+end
+
+# Parse with coderay
+puts CodeRay.scan(text, filetype.to_sym).terminal
