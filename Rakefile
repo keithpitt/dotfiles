@@ -3,7 +3,7 @@
 
 files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc)
 bin = %w(cloudapp pretty)
-gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay)
+gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -71,6 +71,7 @@ end
 
 task :gems do
   puts "Installing gems I like..."
+  run "rvm gemset use global"
   gems.each do |gem|
     run "gem install #{gem}"
   end
