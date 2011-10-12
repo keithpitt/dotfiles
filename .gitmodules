@@ -1,0 +1,3 @@
+[submodule "vendor/gist-osx-service"]
+	path = vendor/gist-osx-service
+	url = git://github.com/dwaite/gist-osx-service.git
