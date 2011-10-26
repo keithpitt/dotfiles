@@ -1,6 +1,8 @@
 [user]
 	name = keithpitt
 	email = me@keithpitt.com
+[branch]
+  autosetuprebase = always
 [color]
   branch = auto
   diff = auto

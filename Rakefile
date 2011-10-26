@@ -1,9 +1,11 @@
 # TODO
 # Automatically install RVM
 
-files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc)
+files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc janus.rake)
 bin = %w(cloudapp pretty)
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
+brews = %w(willgit)
+scripts = %w(publish_to.sh)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -69,6 +71,20 @@ task :bin do
   end
 end
 
+task :scripts do
+  run "mkdir ~/.scripts" unless Dir.exists?("/Users/keith/.scripts")
+  scripts.each do |script|
+    path = File.join(File.dirname(__FILE__), "scripts", script)
+    run "cp #{path} ~/.scripts/#{script}"
+  end
+end
+
+task :brews do
+  brews.each do |recipe|
+    run "brew install #{recipe}"
+  end
+end
+
 task :gems do
   puts "Installing gems I like..."
   run "rvm gemset use global"
@@ -77,4 +93,4 @@ task :gems do
   end
 end
 
-task :default => [ :clean, :setup, :bin, :github, :cloudapp, :gems ]
+task :default => [ :clean, :setup, :bin, :github, :cloudapp, :gems, :brews, :scripts ]
