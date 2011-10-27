@@ -3,3 +3,6 @@ set guioptions-=r
 
 color jellybeans
 set guifont=Monaco:h12
+
+map ; :
+noremap ;; ;
