@@ -6,3 +6,6 @@ set guifont=Monaco:h12
 
 map ; :
 noremap ;; ;
+
+map <Leader>[ :tabprevious<CR>
+map <Leader>] :tabnext<CR>
