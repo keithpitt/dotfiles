@@ -9,3 +9,5 @@ noremap ;; ;
 
 map <Leader>[ :tabprevious<CR>
 map <Leader>] :tabnext<CR>
+
+map ,t :CommandT<CR>
