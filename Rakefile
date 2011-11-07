@@ -4,7 +4,7 @@
 files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc janus.rake)
 bin = %w(cloudapp pretty)
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
-brews = %w(willgit colordiff)
+brews = %w(willgit colordiff autojump)
 scripts = %w(publish_to.sh)
 
 def colorize(text, color_code)
