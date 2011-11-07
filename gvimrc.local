@@ -10,5 +10,9 @@ noremap ;; ;
 map <Leader>[ :tabprevious<CR>
 map <Leader>] :tabnext<CR>
 
+map <Leader><Leader>[ :bp<CR>
+map <Leader><Leader>] :bn<CR>
+
 map ,t :CommandT<CR>
+map ,b <Leader>b
 map ,a :A<CR>
