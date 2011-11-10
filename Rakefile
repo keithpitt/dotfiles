@@ -1,7 +1,7 @@
 # TODO
 # Automatically install RVM
 
-files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc janus.rake ackrc)
+files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc janus.rake ackrc vimrc.local)
 bin = %w(cloudapp pretty)
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 brews = %w(willgit colordiff autojump)
