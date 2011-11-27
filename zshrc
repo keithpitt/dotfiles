@@ -22,7 +22,7 @@ export ZSH_THEME="macovsky-ruby"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby lighthouse gem git-flow github osx pow rails3 rvm ssh-agent)
+plugins=(git brew ruby lighthouse gem git-flow github osx pow rails3 rvm ssh-agent bundler)
 
 source $ZSH/oh-my-zsh.sh
 
