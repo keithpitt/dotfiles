@@ -22,7 +22,7 @@ export ZSH_THEME="macovsky-ruby"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler ruby lighthouse gem git-flow github osx pow rails3 rvm ssh-agent)
+plugins=(git brew ruby lighthouse gem git-flow github osx pow rails3 rvm ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,5 +50,5 @@ export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.3-45758/jars"
 
 # For awesomeness
-alias boom!="git pull --rebase && rake db:migrate && rake ci:run_sequentially && git push"
+alias boom!="git pull --rebase && rake db:migrate && rake && git push"
 alias boom="boom!"
