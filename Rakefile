@@ -35,7 +35,7 @@ task :clean do
   end
 end
 
-task :setup do
+task :configs do
   puts "Copying config files..."
   files.each do |file|
     path = File.join(File.dirname(__FILE__), file)
@@ -93,4 +93,4 @@ task :gems do
   end
 end
 
-task :default => [ :clean, :setup, :bin, :github, :cloudapp, :gems, :brews, :scripts ]
+task :default => [ :clean, :configs, :bin, :github, :cloudapp, :gems, :brews, :scripts ]
