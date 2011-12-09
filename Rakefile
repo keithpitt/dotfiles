@@ -4,7 +4,7 @@
 files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc janus.rake ackrc vimrc.local)
 bin = %w(cloudapp pretty)
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
-brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2)
+brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb)
 scripts = %w(publish_to.sh)
 
 def colorize(text, color_code)
