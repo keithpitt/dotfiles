@@ -22,7 +22,12 @@ end
 def run(command)
   puts "   #{command}"
   output = `#{command} 2>&1`
-  puts "   " + red(output.strip.chomp) unless $?.to_i == 0
+  results = "   " + output.strip.chomp
+  if $?.to_i == 0
+    puts green(results)
+  else
+    puts red(results)
+  end
 end
 
 task :clean do

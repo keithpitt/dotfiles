@@ -38,9 +38,9 @@ function using_gcc() {
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Load scripts
-source "~/.scripts/publish_to.sh"
+source "$HOME/.scripts/publish_to.sh"
 
-export APPLEDOC_TEMPLATE_PATH="/Users/keith/Development/appledoc/Templates"
+export APPLEDOC_TEMPLATE_PATH="$HOME/Development/appledoc/Templates"
 export EDITOR=vim
 export PGOPTIONS='-c client_min_messages=WARNING'
 
