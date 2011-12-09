@@ -21,12 +21,14 @@ end
 
 def run(command)
   puts "   #{command}"
-  output = `#{command} 2>&1`
-  results = "   " + output.strip.chomp
-  if $?.to_i == 0
-    puts green(results)
-  else
-    puts red(results)
+  output = `#{command} 2>&1`.strip.chomp
+  unless output.empty?
+    results = "   " + output
+    if $?.to_i == 0
+      puts green(results)
+    else
+      puts red(results)
+    end
   end
 end
 
