@@ -6,3 +6,5 @@ map ,b <Leader>b
 map ,a :A<CR>
 
 map ,1 :!!!<CR>
+
+nmap ,r :!rspec %<CR>
