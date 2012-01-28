@@ -54,4 +54,4 @@ alias boom!="git pull --rebase && rake db:migrate && rake && git push"
 alias boom="boom!"
 alias jasmine_consumer='be rake jasmine CONFIG_YML=jasmine_consumer.yml'
 alias v='vim'
-alias gogo='formen start'
+alias gogo='foremen start'
