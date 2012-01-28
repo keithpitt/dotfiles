@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="macovsky-ruby"
+export ZSH_THEME="nicoulaj"
 # export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
