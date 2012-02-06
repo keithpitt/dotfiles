@@ -16,3 +16,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set nobackup
 set nowritebackup
 set noswapfile
+
+map <leader>r :NERDTreeFind<cr>
+
+" Dont CTRLP open files in nerd tree
+let g:ctrlp_dont_split = 'NERD_tree_2'
