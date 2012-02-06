@@ -44,7 +44,9 @@ task :dots do
   files.each do |file|
     path = File.join(File.dirname(__FILE__), file)
     name = File.basename(file)
-    run "cp #{path} ~/.#{name}"
+    target = File.expand_path("~/.#{name}")
+    run "rm #{target}" if File.exists?(target)
+    run "ln -s #{path} #{target}"
   end
 end
 
