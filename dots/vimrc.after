@@ -11,3 +11,8 @@ nmap ,r :!rspec %<CR>
 
 " Close vim if the last window is a nerd tree thingy
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Disable backups
+set nobackup
+set nowritebackup
+set noswapfile

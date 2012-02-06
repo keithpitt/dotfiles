@@ -55,3 +55,5 @@ alias boom="boom!"
 alias jasmine_consumer='be rake jasmine CONFIG_YML=jasmine_consumer.yml'
 alias v='vim'
 alias gogo='bundle && rdm && foreman start'
+alias gd="git diff"
+alias gds="git diff --staged"
