@@ -111,4 +111,4 @@ task :janus do
   end
 end
 
-task :default => [ :clean, :dots, :bin, :github, :cloudapp, :gems, :brews, :scripts ]
+task :default => [ :clean, :dots, :bin, :github, :cloudapp, :gems, :brews, :scripts, :janus ]
