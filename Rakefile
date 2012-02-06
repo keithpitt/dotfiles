@@ -1,11 +1,12 @@
 # TODO
 # Automatically install RVM
 
-files = %w(gvimrc.local gitconfig rspec rvmrc zshrc gemrc janus.rake ackrc vimrc.local)
+files = Dir["dots/*"]
 bin = Dir["bin/*"]
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb)
 scripts = %w(publish_to.sh)
+janus = { :tabular => "git://github.com/godlygeek/tabular.git", :easymotion => "https://github.com/Lokaltog/vim-easymotion.git" } 
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -38,11 +39,12 @@ task :clean do
   end
 end
 
-task :configs do
+task :dots do
   puts "Copying config files..."
   files.each do |file|
     path = File.join(File.dirname(__FILE__), file)
-    run "cp #{path} ~/.#{file}"
+    name = File.basename(file)
+    run "cp #{path} ~/.#{name}"
   end
 end
 
@@ -95,4 +97,16 @@ task :gems do
   end
 end
 
-task :default => [ :clean, :configs, :bin, :github, :cloudapp, :gems, :brews, :scripts ]
+task :janus do
+  run "mkdir ~/.janus" unless Dir.exists?(File.expand_path("~/.janus"))
+  janus.each do |key, value|
+    dir = File.expand_path("~/.janus/#{key}")
+    if Dir.exists?(dir)
+      run "cd #{dir} && git fetch && git reset HEAD --hard"
+    else
+      run "git clone #{value} #{dir}"
+    end
+  end
+end
+
+task :default => [ :clean, :dots, :bin, :github, :cloudapp, :gems, :brews, :scripts ]
