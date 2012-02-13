@@ -7,6 +7,7 @@ gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb nss)
 scripts = %w(publish_to.sh)
 janus = { :tabular => "git://github.com/godlygeek/tabular.git", :easymotion => "https://github.com/Lokaltog/vim-easymotion.git" } 
+npm = %w(statify)
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -108,6 +109,12 @@ task :janus do
     else
       run "git clone #{value} #{dir}"
     end
+  end
+end
+
+task :npm do
+  npm.each do |package|
+    run "npm install -g #{package}"
   end
 end
 
