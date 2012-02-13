@@ -4,7 +4,7 @@
 files = Dir["dots/*"]
 bin = Dir["bin/*"]
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
-brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb nss)
+brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb tree)
 scripts = %w(publish_to.sh)
 janus = { :tabular => "git://github.com/godlygeek/tabular.git", :easymotion => "https://github.com/Lokaltog/vim-easymotion.git" } 
 npm = %w(statify)
