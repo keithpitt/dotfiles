@@ -1,4 +1,5 @@
 --type-add=css=.less,.styl,.scss,.sass
+--type-add=html=.haml
 --type-add=js=.coffee
 --type-set=mustache=.mustache,.handlebars
 --nosql

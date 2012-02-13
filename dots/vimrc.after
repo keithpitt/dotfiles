@@ -21,3 +21,9 @@ map <leader>r :NERDTreeFind<cr>
 
 " Dont CTRLP open files in nerd tree
 let g:ctrlp_dont_split = 'NERD_tree_2'
+
+" CTRLP ignores
+let g:ctrlp_custom_ignore = '^tmp'
+let g:ctrlp_custom_ignore = '^coverage'
+let g:ctrlp_custom_ignore = '\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$'
+let g:ctrlp_custom_ignore = '\.DS_Store$'
