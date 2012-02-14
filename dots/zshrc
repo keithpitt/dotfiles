@@ -56,12 +56,17 @@ if [ -f ~/.zsh_nocorrect ]; then
     done < ~/.zsh_nocorrect
 fi
 
-# For awesomeness
+# Random shortcuts
+alias v='vim'
+
+# Development
 alias boom!="git pull --rebase && rake db:migrate && rake && git push"
 alias boom="boom!"
 alias jasmine_consumer='be rake jasmine CONFIG_YML=jasmine_consumer.yml'
-alias v='vim'
 alias gogo='if [ -d tmp ]; then rm -rf tmp; fi; bundle && rdm && if [ -f Procfile.development ] ; then foreman start -f Procfile.development; else; foreman start; fi'
 alias testit='if [ -d coverage ]; then rm -rf coverage; fi; bundle && rdm && rake db:test:prepare && rake'
+
+# Git aliases
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gs="git status --short"
