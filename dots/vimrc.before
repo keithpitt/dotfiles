@@ -9,3 +9,4 @@ call janus#disable_plugin('rename2') " Don't need it
 call janus#disable_plugin('pep8') " Don't need python syntax checking
 call janus#disable_plugin('matchit') " Don't get it
 call janus#disable_plugin('gnudo') " Git helps me undo
+call janus#disable_plugin('tagbar') " I don't really use it
