@@ -30,5 +30,6 @@ let g:ctrlp_custom_ignore = '\.DS_Store$'
 
 " Quicky exit edit mode with jj
 imap jj <Esc>:w<CR>
+imap kk <Esc>:wq<CR>
 
 nnoremap ; :
