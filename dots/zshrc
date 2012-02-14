@@ -72,3 +72,4 @@ alias gds="git diff --staged"
 alias gs="git status --short"
 alias glg="git log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\""
 alias gm='git merge --no-ff'
+alias gmf='git merge --ff-only'
