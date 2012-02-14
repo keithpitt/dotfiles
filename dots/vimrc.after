@@ -27,9 +27,11 @@ set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
 let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " CTRLP ignores
-let g:ctrlp_custom_ignore = 'tmp\|coverage\|'
-let g:ctrlp_custom_ignore = '\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$'
-let g:ctrlp_custom_ignore = '\.DS_Store$'
+" let g:ctrlp_use_caching = 0  " Disable caching
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'coverage\|tmp\|log\|solr',
+  \ 'file': '\.exe$\|\.so$\|\.dll$|\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$\|\.DS_Store$',
+  \ }
 
 " Quicky exit edit mode with jj
 imap jj <Esc>:w<CR>
