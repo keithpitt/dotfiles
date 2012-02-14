@@ -57,7 +57,7 @@ if [ -f ~/.zsh_nocorrect ]; then
 fi
 
 # Random shortcuts
-alias v='vim'
+alias v='mvim .'
 
 # Development
 alias boom!="git pull --rebase && rake db:migrate && rake && git push"

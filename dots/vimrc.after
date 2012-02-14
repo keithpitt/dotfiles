@@ -19,17 +19,18 @@ set noswapfile
 
 map <leader>r :NERDTreeFind<cr>
 
+" Ignores Gone Wild!
+set wildignore+=*/.git/*,*/.sass-cache/*
+set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
+
 " Dont CTRLP open files in nerd tree
 let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " CTRLP ignores
-let g:ctrlp_custom_ignore = '^tmp'
-let g:ctrlp_custom_ignore = '^coverage'
+let g:ctrlp_custom_ignore = 'tmp\|coverage\|'
 let g:ctrlp_custom_ignore = '\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$'
 let g:ctrlp_custom_ignore = '\.DS_Store$'
 
 " Quicky exit edit mode with jj
 imap jj <Esc>:w<CR>
 imap kk <Esc>:wq<CR>
-
-nnoremap ; :
