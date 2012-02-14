@@ -58,7 +58,7 @@ fi
 
 # Random shortcuts
 alias v='mvim .'
-alias tree='tree -C' # Colors by default
+alias t='tree -C' # Colors by default
 
 # Development
 alias boom!="git pull --rebase && rake db:migrate && rake && git push"
