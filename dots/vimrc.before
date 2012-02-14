@@ -1,0 +1,11 @@
+call janus#disable_plugin('syntastic') " I find it slow, espcially when dealing with scss.
+call janus#disable_plugin('easymotion') " I don't use it alot
+call janus#disable_plugin('narrowregion') " I don't get it
+call janus#disable_plugin('buffergator') " Ctrl-P buffer search works for me
+call janus#disable_plugin('vimwiki') " Sounds nice, but I don't use it
+call janus#disable_plugin('snipmate') " They annoy me, more than anything.
+call janus#disable_plugin('snipmate-snippets') " As above
+call janus#disable_plugin('rename2') " Don't need it
+call janus#disable_plugin('pep8') " Don't need python syntax checking
+call janus#disable_plugin('matchit') " Don't get it
+call janus#disable_plugin('gnudo') " Git helps me undo
