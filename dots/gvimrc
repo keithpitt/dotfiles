@@ -5,8 +5,8 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
 " color jellybeans
-colorscheme solarized
-set background=dark
+colorscheme jellybeans
+" set background=dark
 set guifont=Monaco:h12
 
 map <Leader>[ :tabprevious<CR>

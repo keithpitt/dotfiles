@@ -8,9 +8,11 @@ map ,t :CtrlP<CR>
 map ,b <Leader>b
 map ,a :A<CR>
 
-map ,1 :!!!<CR>
+map <Leader>r :e %:p:h
+nmap ,r :e %:p:h
+nmap rr :!rspec %<CR>
 
-nmap ,r :!rspec %<CR>
+map ,1 :!!!<CR>
 
 " Turn on filetype and indentation rules on
 filetype indent on
