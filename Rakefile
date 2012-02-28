@@ -6,8 +6,13 @@ bin = Dir["bin/*"]
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb tree ctags)
 scripts = %w(publish_to gbrt)
-janus = { :tabular => "git://github.com/godlygeek/tabular.git", :easymotion => "https://github.com/Lokaltog/vim-easymotion.git" }
 npm = %w(statify)
+pathogen = [ "git://github.com/tpope/vim-fugitive.git",
+  "https://github.com/tpope/vim-rails",
+  "https://github.com/kien/ctrlp.vim.git",
+  "https://github.com/tpope/vim-surround.git",
+  "git://github.com/godlygeek/tabular.git",
+  "https://github.com/ervandew/supertab.git" ]
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -100,22 +105,18 @@ task :gems do
   end
 end
 
-task :janus do
-  run "mkdir ~/.janus" unless Dir.exists?(File.expand_path("~/.janus"))
-  janus.each do |key, value|
-    dir = File.expand_path("~/.janus/#{key}")
-    if Dir.exists?(dir)
-      run "cd #{dir} && git fetch && git reset HEAD --hard"
-    else
-      run "git clone #{value} #{dir}"
-    end
-  end
-end
-
 task :npm do
   npm.each do |package|
     run "npm install -g #{package}"
   end
 end
 
-task :default => [ :clean, :dots, :bin, :github, :cloudapp, :gems, :brews, :scripts, :janus ]
+task :pathogen do
+  run "mkdir -p ~/.vim/autoload"
+  run "rm -rf ~/.vim/bundle"
+  run "rm ~/.vim/autoload/pathogen.vim"
+  run "ln -s \"#{File.expand_path("./vim")}\" #{File.expand_path("~/.vim/bundle")}"
+  run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
+end
+
+task :default => [ :clean, :dots, :bin, :github, :cloudapp, :gems, :brews, :scripts, :pathogen ]
