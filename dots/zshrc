@@ -59,6 +59,7 @@ fi
 # Random shortcuts
 alias v='mvim .'
 alias t='tree -C' # Colors by default
+alias .='tree -C -L 2; echo "\n\033[32m$PWD"'
 
 # Development
 alias boom!="git pull --rebase && rake db:migrate && rake && git push"
@@ -75,5 +76,6 @@ alias gs="git status --short"
 alias glg="git log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\""
 alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
+alias grr='git reset HEAD --hard; git clean -fn'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
