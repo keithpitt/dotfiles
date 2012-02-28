@@ -46,6 +46,7 @@ let g:ctrlp_custom_ignore = {
 
 " Quicky exit edit mode with jj
 imap jj <Esc>:w<CR>
+imap kk <Esc>:wq<CR>
 
 " Searching
 set hlsearch
