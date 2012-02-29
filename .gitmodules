@@ -43,3 +43,6 @@
 [submodule "vim/ack.vim"]
 	path = vim/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/vim-jade"]
+	path = vim/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
