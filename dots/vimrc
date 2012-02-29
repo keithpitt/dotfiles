@@ -9,7 +9,7 @@ map ,b <Leader>b
 map ,a :A<CR>
 
 map <Leader>r :e %:p:h
-nmap ,r :e %:p:h
+nmap ,r :e %:p:h<CR>
 nmap rr :!rspec %<CR>
 
 map ,1 :!!!<CR>
@@ -55,6 +55,11 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
+" Easy edit files in same directory
+" e %%/new_file.txt
+cabbr <expr> %% expand('%:p:h')
 
 " Viewing
 set number
