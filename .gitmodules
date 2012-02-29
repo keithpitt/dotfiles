@@ -40,3 +40,6 @@
 [submodule "vim/jellybeans.vim"]
 	path = vim/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "vim/ack.vim"]
+	path = vim/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
