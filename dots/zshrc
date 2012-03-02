@@ -78,4 +78,7 @@ alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias grr='git reset HEAD --hard; git clean -fn'
 
+# Ctags
+alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
