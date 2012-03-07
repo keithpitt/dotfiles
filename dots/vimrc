@@ -30,6 +30,9 @@ set shiftwidth=2
 
 set hidden " Not sure what this does...
 
+" Fix the backspace key
+set backspace=indent,eol,start
+
 " Disable backups
 set nobackup
 set nowritebackup
