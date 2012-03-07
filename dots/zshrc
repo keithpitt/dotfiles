@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Load scripts
 source "$HOME/.scripts/publish_to.sh"
@@ -75,3 +75,7 @@ alias grr='git reset HEAD --hard; git clean -fn'
 
 # Ctags
 alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
+
+# Load RBenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
