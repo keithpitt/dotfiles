@@ -77,5 +77,5 @@ alias grr='git reset HEAD --hard; git clean -fn'
 alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
 
 # Load RBenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
