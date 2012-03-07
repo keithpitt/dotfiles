@@ -22,17 +22,12 @@ export ZSH_THEME="nicoulaj"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby lighthouse gem git-flow github osx pow rails3 rvm ssh-agent bundler autojump)
+plugins=(git rails3 autojump)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-
-# For RVM on Lion
-function using_gcc() {
-  env CC="/usr/bin/gcc" ARCHFLAGS="-arch x86_64" ARCHS="x86_64" $*
-}
 
 # Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -80,5 +75,3 @@ alias grr='git reset HEAD --hard; git clean -fn'
 
 # Ctags
 alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
