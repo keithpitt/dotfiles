@@ -57,12 +57,12 @@ alias t='tree -C' # Colors by default
 alias .='tree -C -L 2; echo "\n\033[32m$PWD"'
 
 # Development
-alias boom!="git pull --rebase && rake db:migrate && rake && git push"
+alias be='bundle exec'
+alias boom!="git pull --rebase && be rake db:migrate && be rake && git push"
 alias boom="boom!"
 alias jasmine_consumer='be rake jasmine CONFIG_YML=jasmine_consumer.yml'
-alias gogo='if [ -d tmp ]; then rm -rf tmp; fi; if [ -d log ]; then rm -rf log/*.log; fi; bundle && rdm && if [ -f Procfile.development ] ; then foreman start -f Procfile.development; else; foreman start; fi'
-alias testit='if [ -d coverage ]; then rm -rf coverage; fi; bundle && rdm && rake db:test:prepare && rake'
-alias be='bundle exec'
+alias gogo='if [ -d tmp ]; then rm -rf tmp; fi; if [ -d log ]; then rm -rf log/*.log; fi; bundle && be rake db:migrate && if [ -f Procfile.development ] ; then be foreman start -f Procfile.development; else; be foreman start; fi'
+alias testit='if [ -d coverage ]; then rm -rf coverage; fi; bundle && be rake db:migrate && be rake db:test:prepare && be rake'
 
 # Git aliases
 alias gaa="git add -A"

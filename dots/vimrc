@@ -50,7 +50,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Quicky exit edit mode with jj
-imap jj <Esc>:w<CR>
+imap kj <Esc>:w<CR>
 imap kk <Esc>:wq<CR>
 
 " Searching
@@ -59,10 +59,19 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Move between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
 " Easy edit files in same directory
 " e %%/new_file.txt
 cabbr <expr> %% expand('%:p:h')
+
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
 
 " Viewing
 set number
