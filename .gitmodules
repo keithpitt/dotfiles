@@ -46,3 +46,6 @@
 [submodule "vim/vim-jade"]
 	path = vim/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "vim/CycleColor"]
+	path = vim/CycleColor
+	url = https://github.com/vim-scripts/CycleColor

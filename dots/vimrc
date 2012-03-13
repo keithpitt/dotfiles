@@ -84,3 +84,5 @@ set ruler
 set showcmd
 set laststatus=2
 syntax enable
+
+colorscheme jellybeans
