@@ -49,3 +49,6 @@
 [submodule "vim/CycleColor"]
 	path = vim/CycleColor
 	url = https://github.com/vim-scripts/CycleColor
+[submodule "vim/gist-vim"]
+	path = vim/gist-vim
+	url = https://github.com/mattn/gist-vim.git

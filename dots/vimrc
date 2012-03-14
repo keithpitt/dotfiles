@@ -86,3 +86,6 @@ set laststatus=2
 syntax enable
 
 colorscheme jellybeans
+
+" Allow gist.vim to copy shit into the clipboard
+let g:gist_clip_command = 'pbcopy'
