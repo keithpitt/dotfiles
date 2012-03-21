@@ -34,6 +34,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Load scripts
 source "$HOME/.scripts/publish_to.sh"
+source "$HOME/.zshrc.local"
 
 export APPLEDOC_TEMPLATE_PATH="$HOME/Development/appledoc/Templates"
 export EDITOR="vim -c 'startinsert'" # Start in insert mode

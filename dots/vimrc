@@ -4,8 +4,13 @@ call pathogen#infect()
 map <Leader><Leader>[ :bp<CR>
 map <Leader><Leader>] :bn<CR>
 
-map ,t :CtrlP<CR>
-map ,b <Leader>b
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 20
+
+nnoremap ,t :CtrlP<CR>
+nnoremap ,b :CtrlPBuffer<CR>
+nnoremap ,f :CtrlPMRUFiles<CR>
+
 map ,a :A<CR>
 
 map <Leader>r :e %:p:h
@@ -89,3 +94,9 @@ colorscheme jellybeans
 
 " Allow gist.vim to copy shit into the clipboard
 let g:gist_clip_command = 'pbcopy'
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+" use ,gf to go to file in a vertical split
+nnoremap <silent> ,gf :vertical botright wincmd f<CR>
