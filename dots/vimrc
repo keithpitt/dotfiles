@@ -13,9 +13,10 @@ nnoremap ,f :CtrlPMRUFiles<CR>
 
 map ,a :A<CR>
 
-map <Leader>r :e %:p:h
+map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
 nmap rr :!rspec %<CR>
+nmap tt :!jester %<CR>
 
 map ,1 :!!!<CR>
 
@@ -50,7 +51,7 @@ set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
 " CTRLP ignores
 " let g:ctrlp_use_caching = 0  " Disable caching
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  'coverage\|tmp\|log\|solr',
+  \ 'dir':  'coverage\|tmp\|log\|solr\|node_modules',
   \ 'file': '\.exe$\|\.so$\|\.dll$|\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$\|\.DS_Store$',
   \ }
 
@@ -100,13 +101,3 @@ nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("
 
 " use ,gf to go to file in a vertical split
 nnoremap <silent> ,gf :vertical botright wincmd f<CR>
-
-" Turning off arrow keys.
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
