@@ -15,8 +15,10 @@ map ,a :A<CR>
 
 map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
-nmap rr :!rspec %<CR>
-nmap tt :!jester %<CR>
+
+autocmd FileType ruby noremap <buffer> rr :!rspec %<CR>
+autocmd FileType coffee noremap <buffer> rr :!jasmine %<CR>
+autocmd FileType javascript noremap <buffer> rr :!jasmine %<CR>
 
 map ,1 :!!!<CR>
 
