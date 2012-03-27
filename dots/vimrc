@@ -17,8 +17,8 @@ map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
 
 autocmd FileType ruby noremap <buffer> rr :!rspec %<CR>
-autocmd FileType coffee noremap <buffer> rr :!jasmine %<CR>
-autocmd FileType javascript noremap <buffer> rr :!jasmine %<CR>
+autocmd FileType coffee noremap <buffer> rr :!jest %<CR>
+autocmd FileType javascript noremap <buffer> rr :!jest %<CR>
 
 map ,1 :!!!<CR>
 
