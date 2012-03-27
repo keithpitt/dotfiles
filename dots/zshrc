@@ -74,6 +74,7 @@ alias glg="git log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(w
 alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias grr='git reset HEAD --hard; git clean -fn'
+alias glp='gl && gp'
 
 # Ctags
 alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
