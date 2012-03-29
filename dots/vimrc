@@ -47,13 +47,13 @@ set nowritebackup
 set noswapfile
 
 " Ignores Gone Wild!
-set wildignore+=*/.git/*,*/.sass-cache/*
+set wildignore+=*/.sass-cache/*
 set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
 
 " CTRLP ignores
 " let g:ctrlp_use_caching = 0  " Disable caching
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  'coverage\|tmp\|log\|solr\|node_modules',
+  \ 'dir':  'coverage\|tmp\|log\|solr\|node_modules\|.git',
   \ 'file': '\.exe$\|\.so$\|\.dll$|\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$\|\.DS_Store$',
   \ }
 
