@@ -19,6 +19,7 @@ nmap ,r :e %:p:h<CR>
 autocmd FileType ruby noremap <buffer> rr :!rspec %<CR>
 autocmd FileType coffee noremap <buffer> rr :!jest %<CR>
 autocmd FileType javascript noremap <buffer> rr :!jest %<CR>
+autocmd FileType cucumber noremap <buffer> rr :!cucumber %<CR>
 
 map ,1 :!!!<CR>
 
