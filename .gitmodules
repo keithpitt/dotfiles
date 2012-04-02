@@ -58,3 +58,6 @@
 [submodule "vim/vim-cucumber"]
 	path = vim/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
+[submodule "vim/alternative.vim"]
+	path = vim/alternative.vim
+	url = git://github.com/compactcode/alternate.vim.git
