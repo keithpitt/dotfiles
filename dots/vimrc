@@ -11,16 +11,17 @@ nnoremap ,t :CtrlP<CR>
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,f :CtrlPMRUFiles<CR>
 
-map ,a :A<CR>
+map ,a :Alternate<CR>
 map ,q :bn<CR>
 
 map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
 
-autocmd FileType ruby noremap <buffer> rr :!rspec %<CR>
-autocmd FileType coffee noremap <buffer> rr :!jest %<CR>
-autocmd FileType javascript noremap <buffer> rr :!jest %<CR>
+autocmd FileType ruby nnoremap <buffer> rr :execute "! rspec " . alternate#FindTest() <CR>
+autocmd FileType coffee nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
+autocmd FileType javascript nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
 autocmd FileType cucumber noremap <buffer> rr :!cucumber %<CR>
+autocmd FileType python nnoremap <buffer> rr :execute "! nosetests " . alternate#FindTest() <CR>
 
 map ,1 :!!!<CR>
 
