@@ -12,6 +12,7 @@ nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,f :CtrlPMRUFiles<CR>
 
 map ,a :A<CR>
+map ,q :bn<CR>
 
 map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
