@@ -22,12 +22,9 @@ export ZSH_THEME="nicoulaj"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 autojump)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Load RVM
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -55,7 +52,6 @@ fi
 # Random shortcuts
 alias v='vim'
 alias t='tree -C' # Colors by default
-alias .='tree -C -L 2; echo "\n\033[32m$PWD"'
 
 # Development
 alias be='bundle exec'
@@ -64,6 +60,28 @@ alias boom="boom!"
 alias jasmine_consumer='be rake jasmine CONFIG_YML=jasmine_consumer.yml'
 alias gogo='if [ -d log ]; then rm -rf log/*.log; fi; bundle && be rake db:migrate && if [ -f Procfile.development ] ; then be foreman start -f Procfile.development; else; be foreman start; fi'
 alias testit='if [ -d coverage ]; then rm -rf coverage; fi; bundle && be rake db:migrate && be rake db:test:prepare && be rake'
+
+# Rails 3 aliases, backwards-compatible with Rails 2.
+function _rails_command () {
+  if [ -e "script/server" ]; then
+    ruby script/$@
+  else
+    ruby script/rails $@
+  fi
+}
+
+alias rc='_rails_command console'
+alias rd='_rails_command destroy'
+alias rdb='_rails_command dbconsole'
+alias rdbm='rake db:migrate db:test:clone'
+alias rg='_rails_command generate'
+alias rp='_rails_command plugin'
+alias ru='_rails_command runner'
+alias rs='_rails_command server'
+alias rsd='_rails_command server --debugger'
+alias devlog='tail -f log/development.log'
+alias rdm='rake db:migrate'
+alias rdr='rake db:rollback'
 
 # Git aliases
 alias gaa="git add -A"
@@ -85,3 +103,8 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
+
+# Autojump
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
