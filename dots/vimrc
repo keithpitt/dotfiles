@@ -11,6 +11,7 @@ nnoremap ,t :CtrlP<CR>
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,f :CtrlPMRUFiles<CR>
 
+map ,s :OpenVertical(alternate#FindAlternate())<CR>
 map ,a :Alternate<CR>
 map ,q :bn<CR>
 

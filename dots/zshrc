@@ -79,10 +79,6 @@ alias glp='gl && gp'
 # Ctags
 alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
 
-# Load RBenv
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
-
 # Make the rubies fasterer
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
