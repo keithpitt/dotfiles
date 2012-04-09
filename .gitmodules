@@ -61,3 +61,6 @@
 [submodule "vim/alternative.vim"]
 	path = vim/alternative.vim
 	url = git://github.com/compactcode/alternate.vim.git
+[submodule "vim/open.vim"]
+	path = vim/open.vim
+	url = https://github.com/compactcode/open.vim.git
