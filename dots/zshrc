@@ -93,6 +93,7 @@ alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias grr='git reset HEAD --hard; git clean -fn'
 alias glp='gl && gp'
+alias gsd='gds'
 
 # Ctags
 alias ctagsit='ctags -R --exclude=.git --exclude=log --exclude=coverage *'
