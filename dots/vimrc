@@ -14,6 +14,7 @@ nnoremap ,f :CtrlPMRUFiles<CR>
 map ,s :OpenVertical(alternate#FindAlternate())<CR>
 map ,a :Alternate<CR>
 map ,q :bn<CR>
+map ,z :RV<CR>
 
 map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
