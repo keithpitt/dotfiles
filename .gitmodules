@@ -1,6 +1,3 @@
-[submodule "vendor/gist-osx-service"]
-	path = vendor/gist-osx-service
-	url = git://github.com/dwaite/gist-osx-service.git
 [submodule "vim/vim-fugitive"]
 	path = vim/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
