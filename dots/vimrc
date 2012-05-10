@@ -4,9 +4,6 @@ call pathogen#infect()
 map <Leader><Leader>[ :bp<CR>
 map <Leader><Leader>] :bn<CR>
 
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_max_height = 20
-
 nnoremap ,t :CtrlP<CR>
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,f :CtrlPMRUFiles<CR>
@@ -55,7 +52,10 @@ set noswapfile
 set wildignore+=*/.sass-cache/*
 set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
 
-" CTRLP ignores
+" CTRLP stuffs
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_clear_cache_on_exit = 0 " Cross session caching
+let g:ctrlp_max_height = 20
 let g:ctrlp_use_caching = 1 " Disable caching
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'coverage\|tmp\|log\|solr\|node_modules\|.git',
