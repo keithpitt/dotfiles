@@ -9,7 +9,7 @@ nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,f :CtrlPMRUFiles<CR>
 
 map ,s :OpenVertical(alternate#FindAlternate())<CR>
-map ,a :Open(alternate#FindAlternate())
+map ,a :Open(alternate#FindAlternate())<CR>
 map ,q :bn<CR>
 map ,z :RV<CR>
 
