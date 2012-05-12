@@ -108,3 +108,7 @@ nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("
 
 " use ,gf to go to file in a vertical split
 nnoremap <silent> ,gf :vertical botright wincmd f<CR>
+
+" Per project .vimrc files baby...
+set exrc " enable per-directory .vimrc files
+set secure " disable unsafe commands in local .vimrc files
