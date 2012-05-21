@@ -16,6 +16,9 @@ map ,z :RV<CR>
 map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
 
+" make :W to :w 
+cnoreabbrev W w
+
 autocmd FileType ruby nnoremap <buffer> rr :execute "! rspec " . alternate#FindTest() <CR>
 autocmd FileType coffee nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
 autocmd FileType javascript nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
