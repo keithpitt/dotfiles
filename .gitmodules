@@ -61,3 +61,6 @@
 [submodule "vim/open.vim"]
 	path = vim/open.vim
 	url = https://github.com/compactcode/open.vim.git
+[submodule "vim/wombat.vim"]
+	path = vim/wombat.vim
+	url = https://github.com/jeffreyiacono/vim-colors-wombat.git
