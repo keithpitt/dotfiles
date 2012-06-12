@@ -16,6 +16,9 @@ map ,z :RV<CR>
 map <Leader>r :e %:p:h<CR>
 nmap ,r :e %:p:h<CR>
 
+" make :W to :w 
+cnoreabbrev W w
+
 autocmd FileType ruby nnoremap <buffer> rr :execute "! rspec " . alternate#FindTest() <CR>
 autocmd FileType coffee nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
 autocmd FileType javascript nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
@@ -108,3 +111,7 @@ nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("
 
 " use ,gf to go to file in a vertical split
 nnoremap <silent> ,gf :vertical botright wincmd f<CR>
+
+" Per project .vimrc files baby...
+set exrc " enable per-directory .vimrc files
+set secure " disable unsafe commands in local .vimrc files
