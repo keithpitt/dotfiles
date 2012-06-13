@@ -1,5 +1,5 @@
 # Update path
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin/:$PATH"
 
 # Load RBenv
 eval "$(rbenv init -)"
