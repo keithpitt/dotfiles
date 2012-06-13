@@ -5,7 +5,7 @@ files = Dir["dots/*"]
 bin = Dir["bin/*"]
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb tree ctags proctools)
-scripts = %w(publish_to gbrt)
+scripts = Dir["scripts/*"]
 npm = %w(statify)
 pathogen = [ "git://github.com/tpope/vim-fugitive.git",
   "https://github.com/tpope/vim-rails",
@@ -86,7 +86,7 @@ end
 task :scripts do
   scripts.each do |name|
     path = File.join(File.dirname(__FILE__), "scripts", name)
-    target = File.expand_path("/usr/local/bin/#{name}")
+    target = File.expand_path("/usr/local/bin/#{File.basename(name)}")
     run "ln -s #{path} #{target}"
   end
 end
