@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Load scripts
-source "$HOME/.scripts/publish_to.sh"
+# source "$HOME/.scripts/publish_to.sh"
 source "$HOME/.zshrc.local"
 
 export APPLEDOC_TEMPLATE_PATH="$HOME/Development/appledoc/Templates"
