@@ -55,3 +55,6 @@
 [submodule "vim/vim-bundler"]
 	path = vim/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "vim/vagrant-vim"]
+	path = vim/vagrant-vim
+	url = git://github.com/smerrill/vagrant-vim.git
