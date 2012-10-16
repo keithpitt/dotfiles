@@ -51,6 +51,7 @@ task :github do
 end
 
 task :pathogen do
+  puts "Setting up pathogen..."
   run "mkdir -p ~/.vim/autoload"
   run "rm -rf ~/.vim/bundle"
   run "rm ~/.vim/autoload/pathogen.vim"
