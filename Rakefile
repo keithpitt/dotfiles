@@ -2,7 +2,6 @@
 # Automatically install RVM
 
 files = Dir["dots/*"]
-bin = Dir["bin/*"]
 gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
 brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb tree ctags proctools)
 scripts = Dir["scripts/*"]
@@ -40,9 +39,6 @@ task :clean do
   files.each do |file|
     run "rm ~/.#{file}"
   end
-  bin.each do |file|
-    run "rm /usr/local/bin/#{file}"
-  end
 end
 
 task :dots do
@@ -77,20 +73,6 @@ task :cloudapp do
   run %{echo "#{email}\\n#{password}" > ~/.cloudapp}
 end
 
-task :bin do
-  bin.each do |file|
-    run "cp #{File.expand_path(file)} /usr/local/bin/#{File.basename(file)}"
-  end
-end
-
-task :scripts do
-  scripts.each do |name|
-    path = File.join(File.dirname(__FILE__), "scripts", name)
-    target = File.expand_path("/usr/local/bin/#{File.basename(name)}")
-    run "ln -s #{path} #{target}"
-  end
-end
-
 task :brews do
   brews.each do |recipe|
     run "brew install #{recipe}"
@@ -119,4 +101,4 @@ task :pathogen do
   run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
 end
 
-task :default => [ :clean, :dots, :bin, :github, :cloudapp, :gems, :brews, :scripts, :pathogen ]
+task :default => [ :clean, :dots, :github, :cloudapp, :gems, :brews, :scripts, :pathogen ]
