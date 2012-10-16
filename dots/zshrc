@@ -130,3 +130,6 @@ export DEVELOPMENT_SSL_ENABLED=true
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump
 fi
+
+# Hub alias
+eval "$(hub alias -s)"

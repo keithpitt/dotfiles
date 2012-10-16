@@ -32,3 +32,5 @@
 [diff]
   # For Github-style word diffs
   wordRegex = [^[:space:]]
+[github]
+	user = keithpitt
