@@ -24,7 +24,7 @@ end
 task :clean do
   puts "Removing files..."
   files.each do |file|
-    run "rm ~/.#{file}"
+    run "rm ~/.#{File.basename(file)}"
   end
 end
 
@@ -58,4 +58,4 @@ task :pathogen do
   run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
 end
 
-task :default => [ :clean, :dots, :github, :pathogen ]
+task :default => [ :clean, :dots, :pathogen, :github ]
