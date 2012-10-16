@@ -1,17 +1,4 @@
-# TODO
-# Automatically install RVM
-
 files = Dir["dots/*"]
-gems = %w(cloudapp_api pivotal-tracker pivotxt bundler gist coderay tidy)
-brews = %w(willgit colordiff autojump wget ack git git-flow libyaml node phantomjs qt watch redis readline postgresql paralell imagemagic libxml2 mercurial https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb tree ctags proctools)
-scripts = Dir["scripts/*"]
-npm = %w(statify http-server)
-pathogen = [ "git://github.com/tpope/vim-fugitive.git",
-  "https://github.com/tpope/vim-rails",
-  "https://github.com/kien/ctrlp.vim.git",
-  "https://github.com/tpope/vim-surround.git",
-  "git://github.com/godlygeek/tabular.git",
-  "https://github.com/ervandew/supertab.git" ]
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -63,36 +50,6 @@ task :github do
   run "git config --global github.token #{token}"
 end
 
-task :cloudapp do
-  puts "What is your CloudApp email? "
-  email = STDIN.gets.chomp.strip
-  puts "What is your CloudApp password? "
-  password = STDIN.gets.chomp.strip
-
-  puts "Setting up CloudApp account..."
-  run %{echo "#{email}\\n#{password}" > ~/.cloudapp}
-end
-
-task :brews do
-  brews.each do |recipe|
-    run "brew install #{recipe}"
-  end
-end
-
-task :gems do
-  puts "Installing gems I like..."
-  run "rvm gemset use global"
-  gems.each do |gem|
-    run "gem install #{gem}"
-  end
-end
-
-task :npm do
-  npm.each do |package|
-    run "npm install -g #{package}"
-  end
-end
-
 task :pathogen do
   run "mkdir -p ~/.vim/autoload"
   run "rm -rf ~/.vim/bundle"
@@ -101,4 +58,4 @@ task :pathogen do
   run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
 end
 
-task :default => [ :clean, :dots, :github, :cloudapp, :gems, :brews, :scripts, :pathogen ]
+task :default => [ :clean, :dots, :github, :pathogen ]
