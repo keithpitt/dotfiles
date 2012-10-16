@@ -58,3 +58,6 @@
 [submodule "vim/vagrant-vim"]
 	path = vim/vagrant-vim
 	url = git://github.com/smerrill/vagrant-vim.git
+[submodule "gems/git-smart"]
+	path = gems/git-smart
+	url = git://github.com/geelen/git-smart.git
