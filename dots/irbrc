@@ -33,7 +33,6 @@ begin
     if defined?(::Bundler)
       # Have to check for a version to avoid gems with dashes, e.g. pry-rails
       spec_path = Gem.path.map { |path| Dir.glob("#{path}/specifications/wirble-[0-9]*.gemspec").last }.compact.first
-      p spec_path
       if spec_path.nil?
         warn "Couldn't find #{gem}"
         return
