@@ -12,6 +12,11 @@ def green(text)
   colorize(text, 32)
 end
 
+def system(command)
+  puts "  #{green(command)}"
+  Kernel.system command
+end
+
 def run(command)
   puts "  #{green(command)}"
   IO.popen(command) do |io|
@@ -41,4 +46,9 @@ task :pathogen do
   run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
 end
 
-task :default => [ :dots, :pathogen ]
+task :homebrew do
+  puts "Installing bomebrew..."
+  system %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+end
+
+task :default => [ :dots, :pathogen, :homebrew ]
