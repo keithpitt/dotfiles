@@ -21,13 +21,6 @@ def run(command)
   end
 end
 
-task :clean do
-  puts "Removing files..."
-  files.each do |file|
-    run "rm ~/.#{File.basename(file)}"
-  end
-end
-
 task :dots do
   puts "Copying config files..."
   files.each do |file|
@@ -39,17 +32,6 @@ task :dots do
   end
 end
 
-task :github do
-  puts "What is your GitHub username? "
-  username = STDIN.gets.chomp.strip
-  puts "What is your Github token? "
-  token = STDIN.gets.chomp.strip
-
-  puts "Setting up GitHub account..."
-  run "git config --global github.user #{username}"
-  run "git config --global github.token #{token}"
-end
-
 task :pathogen do
   puts "Setting up pathogen..."
   run "mkdir -p ~/.vim/autoload"
@@ -59,4 +41,4 @@ task :pathogen do
   run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
 end
 
-task :default => [ :clean, :dots, :pathogen, :github ]
+task :default => [ :dots, :pathogen ]
