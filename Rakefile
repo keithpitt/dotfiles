@@ -63,4 +63,4 @@ task :homebrew do
   system %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
 end
 
-task :default => [ :dots, :pathogen, :homebrew ]
+task :default => [ :dots, :pathogen, :preferences, :homebrew ]
