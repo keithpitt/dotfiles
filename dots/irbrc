@@ -48,7 +48,6 @@ begin
     end
 
     begin
-      p gem
       require gem
       yield if block_given?
     rescue Exception => err

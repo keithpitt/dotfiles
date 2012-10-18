@@ -39,7 +39,6 @@ source "$HOME/.zshrc.local"
 export APPLEDOC_TEMPLATE_PATH="$HOME/Development/appledoc/Templates"
 export EDITOR="vim -c 'startinsert'" # Start in insert mode
 export PGOPTIONS='-c client_min_messages=WARNING'
-export PGHOST=/tmp
 
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 # export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
