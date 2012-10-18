@@ -56,15 +56,6 @@ alias boom="boom!"
 alias gogo='if [ -d log ]; then rm -rf log/*.log; fi; bundle && be rake db:migrate && if [ -f Procfile.development ] ; then be foreman start -f Procfile.development; else; be foreman start; fi'
 alias testit='if [ -d coverage ]; then rm -rf coverage; fi; bundle && be rake db:migrate && be rake db:test:prepare && be rake'
 
-# Rails 3 aliases, backwards-compatible with Rails 2.
-function _rails_command () {
-  if [ -e "script/server" ]; then
-    ruby script/$@
-  else
-    ruby script/rails $@
-  fi
-}
-
 alias rc='_rails_command console'
 alias rd='_rails_command destroy'
 alias rdb='_rails_command dbconsole'
@@ -130,6 +121,3 @@ export DEVELOPMENT_SSL_ENABLED=true
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump
 fi
-
-# Hub alias
-eval "$(hub alias -s)"

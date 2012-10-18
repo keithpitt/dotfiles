@@ -5,4 +5,4 @@ export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/Development/d
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
 
 # Load RBenv
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init --no-rehash - zsh)"
