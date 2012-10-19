@@ -67,10 +67,6 @@ begin
   require 'irb/ext/save-history'
   require 'irb/completion'
 
-  # I'm a sucker for blank? and present?
-  require 'active_support'
-  require 'active_support/core_ext'
-
   def log_disable
     ActiveRecord::Base.logger = nil
   end
