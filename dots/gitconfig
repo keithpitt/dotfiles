@@ -34,3 +34,5 @@
   wordRegex = [^[:space:]]
 [github]
 	user = keithpitt
+[core]
+	editor = /usr/local/bin/vim
