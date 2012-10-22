@@ -104,6 +104,7 @@ alias be='bundle exec'
 # Git aliases
 alias gaa="git add -A"
 alias g='git'
+alias ga='git add'
 alias gst='git status'
 alias glg='git smart-log'
 alias gl='git smart-pull'
@@ -127,4 +128,9 @@ export DEVELOPMENT_SSL_ENABLED=true
 # Autojump
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump
+fi
+
+# Autoenv
+if [ -f `brew --cellar`/autoenv/0.1.0/activate.sh ]; then
+  source `brew --cellar`/autoenv/0.1.0/activate.sh
 fi
