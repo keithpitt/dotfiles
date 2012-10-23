@@ -129,8 +129,3 @@ export DEVELOPMENT_SSL_ENABLED=true
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump
 fi
-
-# Autoenv
-if [ -f `brew --cellar`/autoenv/0.1.0/activate.sh ]; then
-  source `brew --cellar`/autoenv/0.1.0/activate.sh
-fi
