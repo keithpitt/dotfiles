@@ -61,3 +61,6 @@
 [submodule "vim/numbers.vim"]
 	path = vim/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "vim/opengl"]
+	path = vim/opengl
+	url = git://github.com/beyondmarc/opengl.vim.git
