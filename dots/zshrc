@@ -139,3 +139,8 @@ export DEVELOPMENT_SSL_ENABLED=true
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump
 fi
+
+# Localfile
+if [ -f "$HOME/.zshrc.local" ]; then
+  . "$HOME/.zshrc.local"
+fi
