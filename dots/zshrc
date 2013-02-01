@@ -160,11 +160,16 @@ export PGUSER='postgres'
 export DEVELOPMENT_SSL_ENABLED=true
 
 # Autojump
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 # Localfile
 if [ -f "$HOME/.zshrc.local" ]; then
   . "$HOME/.zshrc.local"
 fi
+
+## Completions
+autoload -U compinit
+compinit -C
+#
+### case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
