@@ -32,7 +32,7 @@ begin
   def unbundled_require gem
     if defined?(::Bundler)
       # Have to check for a version to avoid gems with dashes, e.g. pry-rails
-      spec_path = Gem.path.map { |path| Dir.glob("#{path}/specifications/wirble-[0-9]*.gemspec").last }.compact.first
+      spec_path = Gem.path.map { |path| Dir.glob("#{path}/specifications/#{gem}-[0-9]*.gemspec").last }.compact.first
       if spec_path.nil?
         warn "Couldn't find #{gem}"
         return
@@ -40,7 +40,7 @@ begin
 
       spec = Gem::Specification.load spec_path
       spec.runtime_dependencies.each do |dependency|
-        puts "loading dependency #{dependency}"
+        # puts "loading dependency #{dependency}"
         # TODO: handle versions
         unbundled_require dependency.name
       end
@@ -81,6 +81,10 @@ begin
   unbundled_require "wirble" do
     Wirble.init
     Wirble.colorize
+  end
+
+  unbundled_require "awesome_print" do
+    AwesomePrint.irb!
   end
 rescue Exception => e
   warn "Error loading irbrc: #{e}"
