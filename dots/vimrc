@@ -96,6 +96,9 @@ cabbr <expr> %% expand('%:p:h')
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
 
+" Remove white space on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Viewing
 set number
 set ruler
