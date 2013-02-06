@@ -83,6 +83,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Quickly switch to normal mode from insert mode
+inoremap jj <Esc> :w<CR>
+inoremap kj <Esc> :w<CR>
+inoremap jk <Esc> :w<CR>
+
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
 " Easy edit files in same directory
 " e %%/new_file.txt
