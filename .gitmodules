@@ -61,3 +61,6 @@
 [submodule "vim/opengl"]
 	path = vim/opengl
 	url = git://github.com/beyondmarc/opengl.vim.git
+[submodule "vim/YouCompleteMe"]
+	path = vim/YouCompleteMe
+	url = git://github.com/Valloric/YouCompleteMe.git
