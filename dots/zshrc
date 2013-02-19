@@ -174,3 +174,10 @@ compinit -C
 #
 ### case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+export CLICOLOR=1;
+export LSCOLORS=exfxcxdxbxegedabagacad; # It is the default value on OSX, so this line can be omitted
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' list-colors 'exfxcxdxbxegedabagacad'
