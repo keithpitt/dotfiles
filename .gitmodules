@@ -13,6 +13,9 @@
 [submodule "vim/tabular"]
 	path = vim/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/supertab"]
+	path = vim/supertab
+	url = https://github.com/ervandew/supertab.git
 [submodule "vim/vim-git"]
 	path = vim/vim-git
 	url = https://github.com/tpope/vim-git.git
