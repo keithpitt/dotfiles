@@ -69,6 +69,9 @@ function spectrum_ls() {
   done
 }
 
+# Run zeus if there is a zeus.json file
+alias zeus-or-rspec="$(test -e zeus.json && echo 'zeus') rspec"
+
 # Customizable parameters.
 PROMPT_PATH_MAX_LENGTH=30
 PROMPT_DEFAULT_END=❯

@@ -1,4 +1,5 @@
 files = Dir["dots/*"]
+bins = Dir["bin/*"]
 preferences = Dir["preferences/*"]
 
 def colorize(text, color_code)
@@ -49,6 +50,19 @@ task :dots do
   end
 end
 
+task :bin do
+  puts "Copying bin files"
+  run "mkdir -p ~/.bin"
+
+  bins.each do |file|
+    path = File.join(File.dirname(__FILE__), file)
+    name = File.basename(file)
+    target = File.expand_path("~/.bin/#{name}")
+    run "rm #{target}" if File.exists?(target)
+    run "ln -s #{path} #{target}"
+  end
+end
+
 task :pathogen do
   puts "Setting up pathogen..."
   run "mkdir -p ~/.vim/autoload"
@@ -63,4 +77,4 @@ task :homebrew do
   system %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
 end
 
-task :default => [ :dots, :pathogen, :preferences, :homebrew ]
+task :default => [ :bin, :dots, :pathogen, :preferences, :homebrew ]

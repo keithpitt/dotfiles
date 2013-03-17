@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Stolen from: https://github.com/thoughtbot/dotfiles/blob/master/zsh/functions/rspec
+rspec() {
+  if [ -S .zeus.sock ]; then
+    zeus rspec "$@"
+  else
+    command rspec "$@"
+  fi
+}
