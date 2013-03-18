@@ -30,28 +30,26 @@ begin
   # when doing Gem::Specification.find_by_name - I clearly don't understand the
   # gem system enough.
   def unbundled_require gem
-    if defined?(::Bundler)
-      # Have to check for a version to avoid gems with dashes, e.g. pry-rails
-      spec_path = Gem.path.map { |path| Dir.glob("#{path}/specifications/#{gem}-[0-9]*.gemspec").last }.compact.first
-      if spec_path.nil?
-        warn "Couldn't find #{gem}"
-        return
-      end
-
-      spec = Gem::Specification.load spec_path
-      spec.runtime_dependencies.each do |dependency|
-        # puts "loading dependency #{dependency}"
-        # TODO: handle versions
-        unbundled_require dependency.name
-      end
-      spec.activate
-    end
-
     begin
       require gem
       yield if block_given?
     rescue Exception => err
-      warn "Couldn't load #{gem}: #{err}"
+      if defined?(::Bundler)
+        # Have to check for a version to avoid gems with dashes, e.g. pry-rails
+        spec_path = Gem.path.map { |path| Dir.glob("#{path}/specifications/#{gem}-[0-9]*.gemspec").last }.compact.first
+        if spec_path.nil?
+          warn "Couldn't find #{gem}"
+          return
+        end
+
+        spec = Gem::Specification.load spec_path
+        spec.runtime_dependencies.each do |dependency|
+          # puts "loading dependency #{dependency}"
+          # TODO: handle versions
+          unbundled_require dependency.name
+        end
+        spec.activate
+      end
     end
   end
 
