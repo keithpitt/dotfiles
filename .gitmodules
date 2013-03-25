@@ -10,9 +10,6 @@
 [submodule "vim/vim-surround"]
 	path = vim/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/tabular"]
-	path = vim/tabular
-	url = git://github.com/godlygeek/tabular.git
 [submodule "vim/supertab"]
 	path = vim/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -34,15 +31,6 @@
 [submodule "vim/ack.vim"]
 	path = vim/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/gist-vim"]
-	path = vim/gist-vim
-	url = https://github.com/mattn/gist-vim.git
-[submodule "vim/webapi-vim"]
-	path = vim/webapi-vim
-	url = https://github.com/mattn/webapi-vim.git
-[submodule "vim/vim-cucumber"]
-	path = vim/vim-cucumber
-	url = https://github.com/tpope/vim-cucumber.git
 [submodule "vim/alternative.vim"]
 	path = vim/alternative.vim
 	url = git://github.com/compactcode/alternate.vim.git
@@ -55,12 +43,3 @@
 [submodule "vim/vim-bundler"]
 	path = vim/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
-[submodule "vim/vagrant-vim"]
-	path = vim/vagrant-vim
-	url = git://github.com/smerrill/vagrant-vim.git
-[submodule "vim/numbers.vim"]
-	path = vim/numbers.vim
-	url = https://github.com/myusuf3/numbers.vim.git
-[submodule "vim/opengl"]
-	path = vim/opengl
-	url = git://github.com/beyondmarc/opengl.vim.git
