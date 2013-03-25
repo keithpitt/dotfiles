@@ -30,8 +30,8 @@ autocmd FileType python nnoremap <buffer> rr :execute "! nosetests " . alternate
 map ,1 :!!!<CR>
 
 " Turn on filetype and indentation rules on
-" filetype indent on
-" filetype plugin on
+filetype indent on
+filetype plugin on
 
 " General settings
 set title
