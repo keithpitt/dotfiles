@@ -28,9 +28,6 @@
 [submodule "vim/jellybeans.vim"]
 	path = vim/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim.git
-[submodule "vim/ack.vim"]
-	path = vim/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/alternative.vim"]
 	path = vim/alternative.vim
 	url = git://github.com/compactcode/alternate.vim.git
@@ -43,3 +40,6 @@
 [submodule "vim/vim-bundler"]
 	path = vim/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "vim/ag.vim"]
+	path = vim/ag.vim
+	url = https://github.com/rking/ag.vim
