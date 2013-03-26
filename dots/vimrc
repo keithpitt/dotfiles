@@ -22,8 +22,8 @@ nmap ,r :e %:p:h<CR>
 cnoreabbrev W w
 
 autocmd FileType ruby nnoremap <buffer> rr :execute "! time rspec-or-zeus " . alternate#FindTest() <CR>
-autocmd FileType coffee nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
-autocmd FileType javascript nnoremap <buffer> rr :execute "! jest " . alternate#FindTest() <CR>
+autocmd FileType coffee nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
+autocmd FileType javascript nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
 autocmd FileType cucumber noremap <buffer> rr :!cucumber %<CR>
 autocmd FileType python nnoremap <buffer> rr :execute "! nosetests " . alternate#FindTest() <CR>
 
