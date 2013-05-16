@@ -178,6 +178,9 @@ if [ -f "$HOME/.zshrc.local" ]; then
   . "$HOME/.zshrc.local"
 fi
 
+# Default editor
+export EDITOR=vim
+
 ## Completions
 autoload -U compinit
 compinit -C
