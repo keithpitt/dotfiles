@@ -151,7 +151,7 @@ alias gl='git smart-pull'
 alias gp='git push'
 alias gc='git commit -v'
 alias gco='git checkout'
-alias gm='git smart-merge'
+# alias gm='git smart-merge' don't use because of graphicsmagick
 alias gds='git diff --staged'
 alias gd='git diff'
 
