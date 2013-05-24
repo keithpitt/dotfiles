@@ -25,3 +25,4 @@ This task will add "github.user" and "github.token" to the git config.
 Remove files added in `rake setup`
 
     $ rake clean
+
