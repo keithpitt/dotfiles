@@ -5,7 +5,7 @@ Dotfiles to setup the system the way I like it :)
 To get started, just run:
 
     $ rake
-    
+
 ## Rake Tasks
 
 #### Copy Dotfiles
