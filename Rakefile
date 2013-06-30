@@ -72,9 +72,4 @@ task :pathogen do
   run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
 end
 
-task :homebrew do
-  puts "Installing bomebrew..."
-  system %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
-end
-
-task :default => [ :bin, :dots, :pathogen, :preferences, :homebrew ]
+task :default => [ :bin, :dots, :pathogen, :preferences ]
