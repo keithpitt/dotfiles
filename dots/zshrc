@@ -194,3 +194,8 @@ export LSCOLORS=exfxcxdxbxegedabagacad; # It is the default value on OSX, so thi
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' list-colors 'exfxcxdxbxegedabagacad'
+
+# chruby awesomeness
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-2.0.0-p247
