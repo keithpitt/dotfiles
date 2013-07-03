@@ -1,7 +1,9 @@
-# Update path
-export PATH="$HOME/.bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/Development/dotfiles/bin:/usr/local/share/npm/bin:$PATH"
+# rbenv
+export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
+
+# homebrew
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
 
 # Update package config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
-
-export PGHOST=/tmp
