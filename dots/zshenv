@@ -1,5 +1,5 @@
 # rbenv
-export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
+export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$HOME/.bin:$PATH"
 
 # homebrew
 homebrew=/usr/local/bin:/usr/local/sbin
@@ -7,3 +7,6 @@ export PATH=$homebrew:$PATH
 
 # Update package config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
+
+# older versions of ruby - ain't no body got time for that
+export RBENV_VERSION=2.0.0-p247

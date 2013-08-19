@@ -36,3 +36,4 @@
 	user = keithpitt
 [core]
 	editor = /usr/local/bin/vim
+	excludesfile = /Users/keithpitt/.gitignore_global
