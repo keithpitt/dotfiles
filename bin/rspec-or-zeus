@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 if [ -S .zeus.sock ]; then
   zeus rspec "$@"
+elif [ -d test ]; then
+  ruby -Itest "$@"
 else
   command ~/.rbenv/shims/rspec "$@"
 fi
