@@ -1,9 +1,12 @@
 # rbenv
-export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$HOME/.bin:$PATH"
+export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
 
 # homebrew
 homebrew=/usr/local/bin:/usr/local/sbin
 export PATH=$homebrew:$PATH
+
+# my local .bin path
+export PATH=$HOME/.bin:$PATH
 
 # Update package config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
