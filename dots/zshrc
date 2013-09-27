@@ -155,6 +155,9 @@ alias gco='git checkout'
 alias gds='git diff --staged'
 alias gd='git diff'
 
+# Ctags stuff
+alias ctagit='ctags -R --exclude=.git --exclude=log *'
+
 # Make the rubies fasterer
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
