@@ -1,9 +1,10 @@
-# rbenv
-export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
-
 # homebrew
 homebrew=/usr/local/bin:/usr/local/sbin
 export PATH=$homebrew:$PATH
+
+# rbenv (installed via homebrew)
+export RBENV_ROOT=/usr/local/var/rbenv
+export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
 
 # my local .bin path
 export PATH=$HOME/.bin:$PATH
