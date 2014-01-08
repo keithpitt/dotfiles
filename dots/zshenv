@@ -13,4 +13,4 @@ export PATH=$HOME/.bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
 
 # older versions of ruby - ain't no body got time for that
-export RBENV_VERSION=2.0.0-p247
+export RBENV_VERSION=2.1.0
