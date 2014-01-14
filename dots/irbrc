@@ -76,14 +76,14 @@ begin
   IRB.conf[:AUTO_INDENT] = true
   IRB.conf[:USE_READLINE] = true
 
-  unbundled_require "wirble" do
-    Wirble.init
-    Wirble.colorize
-  end
+  # unbundled_require "wirble" do
+  #   Wirble.init
+  #   Wirble.colorize
+  # end
 
-  unbundled_require "awesome_print" do
-    AwesomePrint.irb!
-  end
+  # unbundled_require "awesome_print" do
+  #   AwesomePrint.irb!
+  # end
 rescue Exception => e
   warn "Error loading irbrc: #{e}"
 end
