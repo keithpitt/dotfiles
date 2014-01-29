@@ -14,3 +14,6 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/
 
 # older versions of ruby - ain't no body got time for that
 export RBENV_VERSION=2.1.0
+
+# setup gopath
+export GOPATH="$HOME/Development/go-code"

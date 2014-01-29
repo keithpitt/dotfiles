@@ -43,3 +43,6 @@
 [submodule "vim/ag.vim"]
 	path = vim/ag.vim
 	url = https://github.com/rking/ag.vim
+[submodule "vim/vim-golang"]
+	path = vim/vim-golang
+	url = git@github.com:jnwhiteh/vim-golang.git
