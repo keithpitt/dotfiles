@@ -16,4 +16,5 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/
 export RBENV_VERSION=2.1.0
 
 # setup gopath
-export GOPATH="$HOME/Development/go-code"
+export GOPATH="$HOME/Code/go"
+export PATH="$HOME/Code/go/bin:$PATH"
