@@ -18,3 +18,6 @@ export RBENV_VERSION=2.1.0
 # setup gopath
 export GOPATH="$HOME/Code/go"
 export PATH="$HOME/Code/go/bin:$PATH"
+
+# setup buildbox
+export PATH="$HOME/.buildbox:$PATH"
