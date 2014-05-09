@@ -65,11 +65,10 @@ end
 
 task :pathogen do
   puts "Setting up pathogen..."
+  run "rm -rf ~/.vim"
   run "mkdir -p ~/.vim/autoload"
-  run "rm -rf ~/.vim/bundle"
-  run "rm ~/.vim/autoload/pathogen.vim"
   run "ln -s \"#{File.expand_path("./vim")}\" #{File.expand_path("~/.vim/bundle")}"
-  run "curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
+  run "curl -LSso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
 end
 
 task :default => [ :bin, :dots, :pathogen, :preferences ]
