@@ -27,6 +27,9 @@ autocmd FileType javascript nnoremap <buffer> rr :execute "! bundle exec teabag 
 autocmd FileType cucumber noremap <buffer> rr :!cucumber %<CR>
 autocmd FileType python nnoremap <buffer> rr :execute "! nosetests " . alternate#FindTest() <CR>
 
+" autoformat on save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
 map ,1 :!!!<CR>
 
 " Turn on filetype and indentation rules on
