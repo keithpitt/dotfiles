@@ -104,7 +104,6 @@ set number
 set ruler
 set nocursorline
 set nowrap
-set list listchars=tab:\ \ ,trail:·
 set nofoldenable
 set ruler
 set showcmd
