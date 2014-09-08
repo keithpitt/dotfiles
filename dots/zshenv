@@ -20,4 +20,4 @@ export GOPATH="$HOME/Code/go"
 export PATH="$HOME/Code/go/bin:$PATH"
 
 # setup buildbox
-export PATH="$HOME/.buildbox:$PATH"
+export PATH="$HOME/.buildbox/bin:$PATH"
