@@ -1,133 +1,125 @@
-" Install pathogen
-call pathogen#infect()
+" Setup Vundler
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-map <Leader><Leader>[ :bp<CR>
-map <Leader><Leader>] :bn<CR>
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-nnoremap ,t :CtrlP<CR>
-nnoremap ,b :CtrlPBuffer<CR>
-nnoremap ,f :CtrlPMRUFiles<CR>
+" For fast openining of files.
+Plugin 'kien/ctrlp.vim'
 
-map ,s :OpenVertical(alternate#FindAlternate())<CR>
-map ,a :Open(alternate#FindAlternate())<CR>
-map ,q :bn<CR>
-map ,z :RV<CR>
+" The best color scheme ever
+Plugin 'nanotech/jellybeans.vim'
 
-map `` <C-^>
+" Replace newrw
+Plugin 'tpope/vim-vinegar'
 
-map <Leader>r :e %:p:h<CR>
-nmap ,r :e %:p:h<CR>
+" Opening test files like a baws.
+Plugin 'compactcode/alternate.vim'
+Plugin 'compactcode/open.vim'
 
-" make :W to :w
-cnoreabbrev W w
+" Coffeescript highlighting
+Plugin 'kchmck/vim-coffee-script'
 
-autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
-autocmd FileType coffee nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
-autocmd FileType javascript nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
-autocmd FileType cucumber noremap <buffer> rr :!cucumber %<CR>
-autocmd FileType python nnoremap <buffer> rr :execute "! nosetests " . alternate#FindTest() <CR>
+" React syntax highlighting
+Plugin 'mtscout6/vim-cjsx'
 
-" autoformat on save
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+" The best golang plugin I found
+Plugin 'fatih/vim-go'
 
-map ,1 :!!!<CR>
+" Tab completion
+Plugin 'ervandew/supertab'
 
-" Turn on filetype and indentation rules on
-filetype indent on
-filetype plugin on
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
 
-" General settings
-set title
-set encoding=utf-8
+" Setup the color scheme
+syntax enable
+colorscheme jellybeans
 
-set autoindent
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-
-set hidden " Not sure what this does...
-
-" Fix the backspace key
-set backspace=indent,eol,start
-
-" Disable backups
+" Disable backups, we have git!
 set nobackup
 set nowritebackup
 set noswapfile
 
-" Ignores Gone Wild!
-set wildignore+=*/.sass-cache/*
-set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
+" Show line numbers
+set number
 
-" CTRLP stuffs
+" Some awesome shortcuts for CTRLP
+nnoremap ,t :CtrlP<CR>
+nnoremap ,f :CtrlPMRUFiles<CR>
+
+" Start CTRLP reversed (the other way doesn't make sense to me)
 let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_clear_cache_on_exit = 0 " Cross session caching
-let g:ctrlp_max_height = 20
-let g:ctrlp_use_caching = 1 " Disable caching
+
+" Cache the list between sessions
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_use_caching = 1
+
+" Ignore a heap off stuff in CtrlP
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'coverage\|tmp\|log\|solr\|node_modules\|.git',
   \ 'file': '\.exe$\|\.so$\|\.dll$|\.gif$\|\.png$\|\.jpg$|\.ico$|\.ttf$|\.EOT$|\.ico$\|\.DS_Store$',
   \ }
 
-" Quicky exit edit mode with jj
-imap kj <Esc>:w<CR>
-imap kk <Esc>:wq<CR>
+" Remove white space on save
+autocmd BufWritePre * :%s/\s\+$//e
 
-" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+" The backspace key doesn't work in insert mode with outh, crazy town.
+set backspace=indent,eol,start
 
-" Move between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Map the semi-colon (;) to (:) to save having to press shift all the time.
+map ; :
 
-" Quickly switch to normal mode from insert mode
-inoremap jj <Esc> :w<CR>
-inoremap kj <Esc> :w<CR>
-inoremap jk <Esc> :w<CR>
+" Automatically indent code
+set autoindent
+
+" Use 2 spaces for tabs
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+" Shortcut to just to the file list
+map ,r -
+
+" Shortcut to take us back to the previous buffer.
+map `` <C-^>
+
+" Dont' wrap source code in the editor...let it flow on!
+set nowrap
+
+" Faster regular expression lib
+set regexpengine=1
+
+" Shortcuts to opening test files
+map ,s :OpenVertical(alternate#FindAlternate())<CR>
+map ,a :Open(alternate#FindAlternate())<CR>
 
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
 " Easy edit files in same directory
 " e %%/new_file.txt
 cabbr <expr> %% expand('%:p:h')
 
-" Remove white space on save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Viewing
-set number
-set ruler
-set nocursorline
-set nowrap
-set nofoldenable
-set ruler
-set showcmd
-set laststatus=2
-syntax enable
-
-colorscheme jellybeans
-
-" Allow gist.vim to copy shit into the clipboard
-let g:gist_clip_command = 'pbcopy'
-
-" use ,F to jump to tag in a vertical split
-nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
-
-" use ,gf to go to file in a vertical split
-nnoremap <silent> ,gf :vertical botright wincmd f<CR>
-
-" Some magic when opening git commit messages
+" Show spelling errors when editing git commits.
 if has('autocmd')
   if has('spell')
     au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
   endif
-  au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
 endif
 
-" faster regular expression lib
-set regexpengine=1
+" Run ruby tests with rr
+autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
+autocmd FileType coffee nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
+autocmd FileType javascript nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
+
+" Make :W to :w
+cnoreabbrev W w
+
+" Tweaks to the default search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
