@@ -82,11 +82,6 @@ map ; :
 " Automatically indent code
 set autoindent
 
-" Use 2 spaces for tabs
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-
 " Shortcut to just to the file list
 map ,r -
 
@@ -114,6 +109,9 @@ if has('autocmd')
     au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
   endif
 endif
+
+" Better indententation for ruby
+autocmd FileType ruby,eruby, set shiftwidth=2 softtabstop=2 expandtab
 
 " Run ruby tests with rr
 autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
