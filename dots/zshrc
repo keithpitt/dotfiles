@@ -167,7 +167,7 @@ alias ctagit='ctags -R --exclude=.git --exclude=log *'
 
 # Postgres stuffs
 export PGOPTIONS='-c client_min_messages=WARNING'
-export PGUSER='postgres'
+# export PGUSER='postgres'
 
 # I can support SSL
 export DEVELOPMENT_SSL_ENABLED=true

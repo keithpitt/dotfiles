@@ -110,8 +110,10 @@ if has('autocmd')
   endif
 endif
 
-" Better indententation for ruby
-autocmd FileType ruby,eruby, set shiftwidth=2 softtabstop=2 expandtab
+" 2 space indentntation
+autocmd FileType ruby,eruby set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType bash,shell,sh set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType coffee,javascript set shiftwidth=2 softtabstop=2 expandtab
 
 " Run ruby tests with rr
 autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
