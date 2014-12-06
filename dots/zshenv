@@ -13,12 +13,12 @@ export PATH=$HOME/.bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
 
 # older versions of ruby - ain't no body got time for that
-# export RBENV_VERSION=2.1.1
+export RBENV_VERSION=2.1.3
 
 # setup gopath and gobim
-export GOPATH="$HOME/Code/go"
-export GOBIN="$HOME/Code/go/bin"
-export GOROOT="/usr/local/Cellar/go/1.2.2/libexec"
+export GOPATH="$HOME/Development/golang"
+export GOBIN="$HOME/Development/golang/bin"
+export GOROOT="/usr/local/Cellar/go/1.3.3/libexec"
 export PATH="$GOBIN:$PATH"
 
 # setup buildbox

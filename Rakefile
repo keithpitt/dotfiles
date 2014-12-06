@@ -1,6 +1,5 @@
 files = Dir["dots/*"]
 bins = Dir["bin/*"]
-preferences = Dir["preferences/*"]
 
 def colorize(text, color_code)
   "\e[#{color_code}m#{text}\e[0m"
@@ -25,17 +24,6 @@ def run(command)
     while (line = io.gets) do
       puts "    " + line
     end
-  end
-end
-
-task :preferences do
-  puts "Copying preferences..."
-  preferences.each do |file|
-    path = File.join(File.dirname(__FILE__), file)
-    name = File.basename(file)
-    target = File.expand_path("~/Library/Preferences/#{name}")
-    run "rm #{target}" if File.exists?(target)
-    run "ln -s #{path} #{target}"
   end
 end
 
@@ -68,4 +56,4 @@ task :vundler do
   run "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
 end
 
-task :default => [ :bin, :dots, :vundler, :preferences ]
+task :default => [ :dots, :vundler ]

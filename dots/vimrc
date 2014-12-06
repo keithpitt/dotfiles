@@ -26,6 +26,9 @@ Plugin 'kchmck/vim-coffee-script'
 " React syntax highlighting
 Plugin 'mtscout6/vim-cjsx'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 " The best golang plugin I found
 Plugin 'fatih/vim-go'
 
@@ -98,6 +101,9 @@ set regexpengine=1
 map ,s :OpenVertical(alternate#FindAlternate())<CR>
 map ,a :Open(alternate#FindAlternate())<CR>
 
+" Force jsx syntax highlighting in .js files
+let g:jsx_ext_required = 0
+
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
 " Easy edit files in same directory
 " e %%/new_file.txt
@@ -114,6 +120,7 @@ endif
 autocmd FileType ruby,eruby set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType bash,shell,sh set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType coffee,javascript set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sass,scss,css set shiftwidth=2 softtabstop=2 expandtab
 
 " Run ruby tests with rr
 autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
