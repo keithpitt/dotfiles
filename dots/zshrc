@@ -143,17 +143,17 @@ alias be='bundle exec'
 
 # Git aliases
 alias gaa="git add -A"
-alias g='git'
-alias ga='git add'
 alias gst='git status'
-alias glg='git smart-log'
-alias gl='git smart-pull'
-alias gp='git push'
+alias gds='git diff --staged'
 alias gc='git commit -v'
 alias gco='git checkout'
-# alias gm='git smart-merge' don't use because of graphicsmagick
-alias gds='git diff --staged'
+alias gp='git push'
+alias ga='git add'
+alias gl='git smart-pull'
 alias gd='git diff'
+
+# alias glg='git smart-log'
+# alias gm='git smart-merge' don't use because of graphicsmagick
 
 # Ctags stuff
 alias ctagit='ctags -R --exclude=.git --exclude=log *'
