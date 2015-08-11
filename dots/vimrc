@@ -12,6 +12,7 @@ Plugin 'kien/ctrlp.vim'
 
 " The best color scheme ever
 Plugin 'nanotech/jellybeans.vim'
+" Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Replace newrw
 Plugin 'tpope/vim-vinegar'
@@ -35,6 +36,13 @@ Plugin 'ervandew/supertab'
 " Best searching ever
 Plugin 'rking/ag.vim'
 
+" JSX & Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" Latest Ruby colors
+Plugin 'vim-ruby/vim-ruby'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
@@ -42,6 +50,12 @@ filetype plugin indent on
 " Setup the color scheme
 syntax enable
 colorscheme jellybeans
+
+" Force jsx syntax highlighting in .js files
+let g:jsx_ext_required = 0
+
+" Enable goimports to automatically insert import paths
+let g:go_fmt_command = "goimports"
 
 " Disable backups, we have git!
 set nobackup
@@ -98,9 +112,6 @@ set regexpengine=1
 map ,s :OpenVertical(alternate#FindAlternate())<CR>
 map ,a :Open(alternate#FindAlternate())<CR>
 
-" Force jsx syntax highlighting in .js files
-let g:jsx_ext_required = 0
-
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
 " Easy edit files in same directory
 " e %%/new_file.txt
@@ -116,7 +127,7 @@ endif
 " 2 space indentntation
 autocmd FileType ruby,eruby set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType bash,shell,sh set shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType coffee,javascript,js set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType coffee,javascript,js,jsx set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sass,scss,css set shiftwidth=2 softtabstop=2 expandtab
 
 " Run ruby tests with rr
@@ -135,3 +146,7 @@ set smartcase
 
 " Trying to leave an unsaved buffer will fail without this
 set hidden
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

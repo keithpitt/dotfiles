@@ -151,8 +151,8 @@ alias gp='git push'
 alias ga='git add'
 alias gl='git smart-pull'
 alias gd='git diff'
+alias glg='git smart-log'
 
-# alias glg='git smart-log'
 # alias gm='git smart-merge' don't use because of graphicsmagick
 
 # Ctags stuff
@@ -197,3 +197,38 @@ export LSCOLORS=exfxcxdxbxegedabagacad; # It is the default value on OSX, so thi
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' list-colors 'exfxcxdxbxegedabagacad'
+
+### direnv
+eval "$(direnv hook $0)"
+
+source ~/.fresh/build/shell.sh
+
+### buildkite
+alias bkl='open https://buildkite.com/buildkite/buildkite/builds/last'
+
+# homebrew
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+
+# my local .bin path
+export PATH=$HOME/.bin:$PATH
+
+# Update package config
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
+
+# older versions of ruby - ain't no body got time for that
+export RBENV_VERSION=2.2.0
+# export RBENV_VERSION=2.1.5
+
+# setup gopath and gobim
+export GOPATH="$HOME/Development/golang"
+export GOBIN="$HOME/Development/golang/bin"
+export GOROOT="/usr/local/Cellar/go/1.4.2/libexec"
+export PATH="$GOBIN:$PATH"
+
+# setup buildbox
+export PATH="$HOME/.buildbox/bin:$PATH"
+
+# rbenv (installed via homebrew)
+export RBENV_ROOT=/usr/local/var/rbenv
+export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"

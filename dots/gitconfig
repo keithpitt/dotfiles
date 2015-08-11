@@ -37,3 +37,7 @@
 [core]
 	editor = /usr/local/bin/vim
 	excludesfile = /Users/keithpitt/.gitignore_global
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
