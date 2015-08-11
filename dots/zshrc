@@ -152,6 +152,7 @@ alias ga='git add'
 alias gl='git smart-pull'
 alias gd='git diff'
 alias glg='git smart-log'
+alias cg='cd $(git root)'
 
 # alias gm='git smart-merge' don't use because of graphicsmagick
 
