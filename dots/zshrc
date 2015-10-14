@@ -206,30 +206,3 @@ source ~/.fresh/build/shell.sh
 
 ### buildkite
 alias bkl='open https://buildkite.com/buildkite/buildkite/builds/last'
-
-# homebrew
-homebrew=/usr/local/bin:/usr/local/sbin
-export PATH=$homebrew:$PATH
-
-# my local .bin path
-export PATH=$HOME/.bin:$PATH
-
-# Update package config
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
-
-# older versions of ruby - ain't no body got time for that
-export RBENV_VERSION=2.2.0
-# export RBENV_VERSION=2.1.5
-
-# setup gopath and gobim
-export GOPATH="$HOME/Development/golang"
-export GOBIN="$HOME/Development/golang/bin"
-export GOROOT="/usr/local/Cellar/go/1.4.2/libexec"
-export PATH="$GOBIN:$PATH"
-
-# setup buildbox
-export PATH="$HOME/.buildbox/bin:$PATH"
-
-# rbenv (installed via homebrew)
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
