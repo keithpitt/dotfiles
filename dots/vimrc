@@ -134,7 +134,7 @@ autocmd FileType sass,scss,css set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
 autocmd FileType coffee nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
 autocmd FileType javascript nnoremap <buffer> rr :execute "! bundle exec teabag " . alternate#FindTest() <CR>
-autocmd FileType go nnoremap <buffer> rr :execute "! gotest " . getcwd() . " " . alternate#FindTest() <CR>
+autocmd FileType go nnoremap <buffer> rr :execute "! gotest " . alternate#FindTest() <CR>
 
 " Make :W to :w
 cnoreabbrev W w
