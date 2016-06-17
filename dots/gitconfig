@@ -47,3 +47,5 @@
 	log = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
 	show = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
 	diff = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
+[interactive]
+	diffFilter = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight
