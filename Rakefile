@@ -33,7 +33,7 @@ task :dots do
     path = File.join(File.dirname(__FILE__), file)
     name = File.basename(file)
     target = File.expand_path("~/.#{name}")
-    run "rm #{target}" if File.exists?(target)
+    run "rm -rf #{target}"
     run "ln -s #{path} #{target}"
   end
 end
