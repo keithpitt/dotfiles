@@ -33,6 +33,7 @@
 [diff]
   # For Github-style word diffs
   wordRegex = [^[:space:]]
+	compactionHeuristic = true
 [github]
 	user = keithpitt
 [core]
@@ -42,3 +43,7 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[pager]
+	log = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
