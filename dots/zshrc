@@ -167,7 +167,7 @@ alias ctagit='ctags -R --exclude=.git --exclude=log *'
 # export RUBY_HEAP_FREE_MIN=500000
 
 # Postgres stuffs
-export PGOPTIONS='-c client_min_messages=WARNING'
+# export PGOPTIONS='-c client_min_messages=WARNING'
 # export PGUSER='postgres'
 
 # I can support SSL
@@ -201,8 +201,6 @@ zstyle ':completion:*' list-colors 'exfxcxdxbxegedabagacad'
 
 ### direnv
 eval "$(direnv hook $0)"
-
-source ~/.fresh/build/shell.sh
 
 ### buildkite
 alias bkl='open https://buildkite.com/buildkite/buildkite/builds/last'
