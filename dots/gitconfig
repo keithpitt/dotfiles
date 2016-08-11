@@ -44,8 +44,10 @@
 	smudge = git-lfs smudge %f
 	required = true
 [pager]
-	log = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
-	show = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
-	diff = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight | less
+	log = /usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = /usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
-	diffFilter = /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight
+	diffFilter = /usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight/diff-highlight
+[credential]
+	helper = osxkeychain

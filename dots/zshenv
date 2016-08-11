@@ -31,3 +31,10 @@ export PATH="$GOBIN:$PATH"
 # rbenv (installed via homebrew)
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
+
+# nvm (installed via homebrew)
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
+# arc
+export PATH="/Users/keithpitt/Development/phacility/arcanist/bin:$PATH"
