@@ -142,22 +142,22 @@ alias t='tree -C' # Colors by default
 alias be='bundle exec'
 
 # Git aliases
-alias gaa="git add -A"
-alias gst='git status'
-alias gds='git diff --staged'
-alias gc='git commit -v'
-alias gco='git checkout'
-alias gp='git push'
-alias ga='git add'
-alias gl='git smart-pull'
-alias gd='git diff'
-alias glg='git smart-log'
-alias cg='cd $(git root)'
+# alias gaa="git add -A"
+# alias gst='git status'
+# alias gds='git diff --staged'
+# alias gc='git commit -v'
+# alias gco='git checkout'
+# alias gp='git push'
+# alias ga='git add'
+# alias gl='git smart-pull'
+# alias gd='git diff'
+# alias glg='git smart-log'
+# alias cg='cd $(git root)'
 
 # alias gm='git smart-merge' don't use because of graphicsmagick
 
 # Ctags stuff
-alias ctagit='ctags -R --exclude=.git --exclude=log *'
+# alias ctagit='ctags -R --exclude=.git --exclude=log *'
 
 # Make the rubies fasterer
 # export RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -204,3 +204,8 @@ eval "$(direnv hook $0)"
 
 ### buildkite
 alias bkl='open https://buildkite.com/buildkite/buildkite/builds/last'
+
+### chruby
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# chruby ruby-2.3.1
+# RUBIES+=(~/.rbenv/versions/*)

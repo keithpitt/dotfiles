@@ -20,7 +20,7 @@ export PATH=$HOME/.bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
 
 # older versions of ruby - ain't no body got time for that
-export RBENV_VERSION=2.3.1
+# export RBENV_VERSION=2.4.0
 
 # setup gopath and gobim
 export GOPATH="$HOME/Development/golang"
@@ -29,12 +29,18 @@ export GOBIN="$HOME/Development/golang/bin"
 export PATH="$GOBIN:$PATH"
 
 # rbenv (installed via homebrew)
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
+# export RBENV_ROOT=/usr/local/var/rbenv
+# export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
 
 # nvm (installed via homebrew)
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# . "$(brew --prefix nvm)/nvm.sh"
 
 # arc
 export PATH="/Users/keithpitt/Development/phacility/arcanist/bin:$PATH"
+
+#chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+alias cya='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
