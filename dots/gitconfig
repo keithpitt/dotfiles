@@ -43,3 +43,5 @@
 	diffFilter = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight
 [credential]
 	helper = osxkeychain
+[commit]
+	verbose = true
