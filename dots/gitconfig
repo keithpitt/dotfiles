@@ -45,3 +45,5 @@
 	helper = osxkeychain
 [commit]
 	verbose = true
+[help]
+	autocorrect = 20
