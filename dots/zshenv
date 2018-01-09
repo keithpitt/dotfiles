@@ -27,6 +27,7 @@ export PATH="$GOBIN:$PATH"
 #chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.4.1
+chruby ruby-2.4.2
 
 alias cya='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias camplz='sudo killall VDCAssistant'
