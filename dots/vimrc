@@ -43,6 +43,10 @@ Plugin 'mxw/vim-jsx'
 " Latest Ruby colors
 Plugin 'vim-ruby/vim-ruby'
 
+" Supports opening files with colon line numbers at the end like this:
+" vim /Users/keithpitt/.gem/ruby/2.4.2/gems/letter_opener-1.5.0/lib/letter_opener/message.rb:12
+Plugin 'bogado/file-line'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
