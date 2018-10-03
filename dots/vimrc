@@ -47,13 +47,35 @@ Plugin 'vim-ruby/vim-ruby'
 " vim /Users/keithpitt/.gem/ruby/2.4.2/gems/letter_opener-1.5.0/lib/letter_opener/message.rb:12
 Plugin 'bogado/file-line'
 
+" Ragel colors omg.
+Plugin 'jneen/ragel.vim'
+
+" GraphQL is the best
+Plugin 'jparise/vim-graphql'
+
+" Mmmm...templates...
+Plugin 'mustache/vim-mustache-handlebars'
+
+" No one knows what it is...
+" Plugin 'file:///Users/keithpitt/Development/framework/vim-frontendlang'
+set runtimepath^=~/.vim/bundle/vim-frontendlang
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
+
 " Setup the color scheme
 syntax enable
 colorscheme jellybeans
+
+" Make sure we set the filetype when we open a Ragel file. This isn't built
+" into `ragel.vim`... (boo....)
+" https://github.com/jneen/ragel.vim/pull/4/files
+augroup vim-ragel-filetype
+  autocmd!
+  au BufRead,BufNewFile *.rl,*.ragel set filetype=ragel
+augroup END
 
 " Force jsx syntax highlighting in .js files
 let g:jsx_ext_required = 0
@@ -133,6 +155,7 @@ autocmd FileType ruby,eruby set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType bash,shell,sh set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType coffee,javascript,js,jsx set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sass,scss,css set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html set shiftwidth=2 softtabstop=2 expandtab
 
 " Run ruby tests with rr
 autocmd FileType ruby nnoremap <buffer> rr :execute "! time ./bin/rspec " . alternate#FindTest() <CR>
@@ -157,3 +180,6 @@ set shell=$SHELL
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+set list
+set listchars=tab:>-

@@ -32,9 +32,10 @@
 	editor = /usr/local/bin/vim
 	excludesfile = /Users/keithpitt/.gitignore_global
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [pager]
 	log = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight | less
 	show = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight | less
@@ -46,4 +47,4 @@
 [commit]
 	verbose = true
 [help]
-	autocorrect = 20
+	autocorrect = -1
