@@ -37,11 +37,11 @@
 	required = true
 	process = git-lfs filter-process
 [pager]
-	log = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight | less
-	show = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight | less
-	diff = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight | less
+	log = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
-	diffFilter = /usr/local/Cellar/git/2.13.2/share/git-core/contrib/diff-highlight/diff-highlight
+	diffFilter = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight
 [credential]
 	helper = osxkeychain
 [commit]

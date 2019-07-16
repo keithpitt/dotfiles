@@ -43,4 +43,19 @@ task :vundler do
   run "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
 end
 
-task :default => [ :dots, :vundler ]
+task :brew do
+  run "brew install zsh"
+  run "brew install autojump"
+  run "brew install chruby"
+  run "brew install vim"
+  run "brew install git"
+  run "brew install ruby-build"
+  run "brew install direnv"
+end
+
+task :zsh do
+  run "rm -rf ~/.zsh/zsh-autosuggestions"
+  run "git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions"
+end
+
+task :default => [ :dots, :vundler, :brew, :zsh ]
