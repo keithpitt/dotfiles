@@ -7,12 +7,17 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" It's a game, sounds like fun
+Plugin 'vim/killersheep'
+
 " For fast openining of files.
 Plugin 'kien/ctrlp.vim'
 
 " The best color scheme ever
 Plugin 'nanotech/jellybeans.vim'
 " Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ayu-theme/ayu-vim'
 
 " Replace newrw
 Plugin 'tpope/vim-vinegar'
@@ -43,6 +48,9 @@ Plugin 'mxw/vim-jsx'
 " Latest Ruby colors
 Plugin 'vim-ruby/vim-ruby'
 
+" Simplifies the transition between multiline and single-line code
+Plugin 'AndrewRadev/splitjoin.vim'
+
 " Supports opening files with colon line numbers at the end like this:
 " vim /Users/keithpitt/.gem/ruby/2.4.2/gems/letter_opener-1.5.0/lib/letter_opener/message.rb:12
 Plugin 'bogado/file-line'
@@ -67,7 +75,18 @@ filetype plugin indent on
 
 " Setup the color scheme
 syntax enable
-colorscheme jellybeans
+
+" Moar colors
+set termguicolors
+
+" colorscheme jellybeans
+
+" this theme
+let ayucolor="mirage"
+colorscheme ayu
+
+" Transparent background color
+hi Normal guibg=NONE ctermbg=NONE
 
 " Make sure we set the filetype when we open a Ragel file. This isn't built
 " into `ragel.vim`... (boo....)
@@ -173,6 +192,14 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Splitjoin config stolen from @matthewd
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+
+let g:splitjoin_trailing_comma = 1
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
 
 " Trying to leave an unsaved buffer will fail without this
 set hidden

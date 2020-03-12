@@ -115,3 +115,8 @@ zstyle ':completion:*' list-colors 'exfxcxdxbxegedabagacad'
 
 ### direnv
 eval "$(direnv hook $0)"
+
+#chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+#source /usr/local/share/chruby/auto.sh
+chruby ruby-2.6.3

@@ -24,10 +24,10 @@ export GOPATH="$HOME/Development/golang"
 export GOBIN="$HOME/Development/golang/bin"
 export PATH="$GOBIN:$PATH"
 
-#chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.6.2
-
 alias cya='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias camplz='sudo killall VDCAssistant'
+
+#chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+#source /usr/local/share/chruby/auto.sh
+chruby ruby-2.6.3

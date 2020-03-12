@@ -31,15 +31,13 @@
 [core]
 	editor = /usr/local/bin/vim
 	excludesfile = /Users/keithpitt/.gitignore_global
+	quotepath = false
+	pager = delta --dark
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
-[pager]
-	log = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight | less
-	show = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight | less
-	diff = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
 	diffFilter = /usr/local/Cellar/git/2.22.0_1/share/git-core/contrib/diff-highlight/diff-highlight
 [credential]
