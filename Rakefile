@@ -51,6 +51,7 @@ task :brew do
   run "brew install git"
   run "brew install ruby-build"
   run "brew install direnv"
+  run "brew install octavore/tools/delta"
 end
 
 task :zsh do
