@@ -56,6 +56,7 @@ end
 task :zsh do
   run "rm -rf ~/.zsh/zsh-autosuggestions"
   run "git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions"
+  run "cd ~/.zsh/zsh-autosuggestions; git checkout origin/develop"
 end
 
 task :default => [ :dots, :vundler, :brew, :zsh ]
