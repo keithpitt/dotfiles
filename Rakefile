@@ -44,14 +44,15 @@ task :vundler do
 end
 
 task :brew do
-  run "brew install zsh"
-  run "brew install autojump"
-  run "brew install chruby"
-  run "brew install vim"
-  run "brew install git"
-  run "brew install ruby-build"
-  run "brew install direnv"
-  run "brew install octavore/tools/delta"
+  run "brew reinstall zsh"
+  run "brew reinstall autojump"
+  run "brew reinstall chruby"
+  run "brew reinstall vim"
+  run "brew reinstall git"
+  run "brew reinstall ruby-build"
+  run "brew reinstall direnv"
+  run "brew reinstall goreman"
+  run "brew reinstall octavore/tools/delta"
 end
 
 task :zsh do
