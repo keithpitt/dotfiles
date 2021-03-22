@@ -53,6 +53,10 @@ task :brew do
   run "brew reinstall direnv"
   run "brew reinstall goreman"
   run "brew reinstall octavore/tools/delta"
+  run "brew reinstall the_silver_searcher"
+  run "brew reinstall gh"
+  run "brew reinstall wget"
+  run "brew reinstall puma/puma/puma-dev"
 end
 
 task :zsh do
@@ -61,4 +65,14 @@ task :zsh do
   run "cd ~/.zsh/zsh-autosuggestions; git checkout origin/develop"
 end
 
-task :default => [ :dots, :vundler, :brew, :zsh ]
+task :ruby do
+  version = File.read(File.join(File.dirname(__FILE__), "dots", "ruby-version")).chomp
+  run "ruby-build #{version} ~/.rubies/ruby-#{version}"
+end
+
+task :puma do
+  run "sudo puma-dev -setup -d localhost"
+  run "puma-dev -install -d localhost"
+end
+
+task :default => [ :dots, :vundler, :brew, :zsh, :ruby, :puma ]
