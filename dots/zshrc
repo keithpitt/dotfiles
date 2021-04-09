@@ -91,10 +91,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 
-# Autojump
-export SHELL="zsh" # hacky but works
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
 # Default editor
 export EDITOR=vim
 
@@ -113,10 +109,30 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' list-colors 'exfxcxdxbxegedabagacad'
 
-### direnv
-eval "$(direnv hook $0)"
+# homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
+# my local .bin path
+export PATH=$HOME/.bin:$PATH
+
+# Update package config
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
+
+# setup gopath and gobim
+export GOPATH="$HOME/Development/golang"
+export GOBIN="$HOME/Development/golang/bin"
+export PATH="$GOBIN:$PATH"
+
+alias cya='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias camplz='sudo killall VDCAssistant'
 
 #chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-#source /usr/local/share/chruby/auto.sh
-chruby ruby-2.6.5
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+chruby ruby-`cat ~/.ruby-version`
+
+# Autojump
+export SHELL="zsh" # hacky but works
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+### direnv
+eval "$(direnv hook $0)"

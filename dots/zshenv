@@ -11,23 +11,22 @@
 # https://github.com/thoughtbot/dotfiles/blob/master/README.md#note-for-os-x-el-capitan-users
 
 # homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-# my local .bin path
-export PATH=$HOME/.bin:$PATH
-
-# Update package config
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
-
-# setup gopath and gobim
-export GOPATH="$HOME/Development/golang"
-export GOBIN="$HOME/Development/golang/bin"
-export PATH="$GOBIN:$PATH"
-
-alias cya='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-alias camplz='sudo killall VDCAssistant'
-
-#chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-#source /usr/local/share/chruby/auto.sh
-chruby ruby-2.6.5
+# export PATH=/opt/homebrew/bin:$PATH
+#
+# # my local .bin path
+# export PATH=$HOME/.bin:$PATH
+#
+# # Update package config
+# export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
+#
+# # setup gopath and gobim
+# export GOPATH="$HOME/Development/golang"
+# export GOBIN="$HOME/Development/golang/bin"
+# export PATH="$GOBIN:$PATH"
+#
+# alias cya='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+# alias camplz='sudo killall VDCAssistant'
+#
+# #chruby
+# source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+# chruby ruby-`cat ~/.ruby-version`

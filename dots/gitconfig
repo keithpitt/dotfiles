@@ -30,7 +30,7 @@
 [github]
 	user = keithpitt
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
 	excludesfile = /Users/keithpitt/.gitignore_global
 	quotepath = false
 [filter "lfs"]
@@ -39,7 +39,7 @@
 	required = true
 	process = git-lfs filter-process
 [interactive]
-	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+	# diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 [credential]
 	helper = osxkeychain
 [commit]
