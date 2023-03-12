@@ -50,8 +50,6 @@ task :brew do
   run "brew reinstall vim"
   run "brew reinstall git"
   run "brew reinstall ruby-build"
-  run "brew reinstall direnv"
-  run "brew reinstall goreman"
   run "brew reinstall octavore/tools/delta"
   run "brew reinstall the_silver_searcher"
   run "brew reinstall gh"
