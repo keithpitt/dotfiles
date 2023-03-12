@@ -56,7 +56,6 @@ task :brew do
   run "brew reinstall the_silver_searcher"
   run "brew reinstall gh"
   run "brew reinstall wget"
-  run "brew reinstall puma/puma/puma-dev"
 end
 
 task :zsh do
@@ -70,9 +69,4 @@ task :ruby do
   run "ruby-build #{version} ~/.rubies/ruby-#{version}"
 end
 
-task :puma do
-  run "sudo puma-dev -setup -d localhost"
-  run "puma-dev -install -d localhost"
-end
-
-task :default => [ :dots, :vundler, :brew, :zsh, :ruby, :puma ]
+task :default => [ :dots, :vundler, :brew, :zsh, :ruby ]
