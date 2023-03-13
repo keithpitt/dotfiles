@@ -14,10 +14,11 @@ Plugin 'vim/killersheep'
 Plugin 'kien/ctrlp.vim'
 
 " The best color scheme ever
-Plugin 'nanotech/jellybeans.vim'
+" Plugin 'nanotech/jellybeans.vim'
 " Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ayu-theme/ayu-vim'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'ayu-theme/ayu-vim'
+Plugin 'luxed/ayu-vim' " official version not maintained anymore
 
 " Replace newrw
 Plugin 'tpope/vim-vinegar'
