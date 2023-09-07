@@ -50,3 +50,5 @@
 	prompt = false
 [difftool "delta"]
 	cmd = delta \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[init]
+	defaultBranch = main
