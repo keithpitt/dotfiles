@@ -19,12 +19,15 @@ def system(command)
 end
 
 def run(command)
+  output = []
   puts "  #{green(command)}"
   IO.popen(command) do |io|
     while (line = io.gets) do
       puts "    " + line
+      output << line
     end
   end
+  output.join("\n")
 end
 
 task :dots do
@@ -44,6 +47,7 @@ task :vundler do
 end
 
 task :brew do
+  run "brew reinstall direnv"
   run "brew reinstall zsh"
   run "brew reinstall autojump"
   run "brew reinstall chruby"
@@ -54,6 +58,16 @@ task :brew do
   run "brew reinstall the_silver_searcher"
   run "brew reinstall gh"
   run "brew reinstall wget"
+  run "brew reinstall gh"
+  run "brew install --cask raycast"
+end
+
+task :github do
+  gh_status = run("gh auth status")
+  unless gh_status =~ /Logged in to/
+    run "gh auth login"
+  end
+  run "gh auth setup-git"
 end
 
 task :zsh do
@@ -67,4 +81,4 @@ task :ruby do
   run "ruby-build #{version} ~/.rubies/ruby-#{version}"
 end
 
-task :default => [ :dots, :vundler, :brew, :zsh, :ruby ]
+task :default => [ :dots, :vundler, :brew, :github, :zsh, :ruby ]
